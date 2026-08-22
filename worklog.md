@@ -65,3 +65,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: The smoke test first failed with the expected missing `dist/index.html` error; `npm run check` reported 0 errors, 0 warnings, and 0 hints; `npm test` built 1 static page and passed 1 test; `git diff --check` was clean.
 - Commit: not committed
 - Next step: Commit the Task 1 bootstrap, then begin Task 2 by defining the artwork content collection schema and its intentionally failing schema check.
+
+## 2026-08-22 09:59 - Task 2 artwork content contract
+
+- Status: completed
+- Changed: Added the `artworks` Astro content collection schema and the first structured artwork entry for Caillebotte's `巴黎街道；雨天`; added its required public-domain rights note after the intentional schema failure.
+- Verified: The first `npm run check` failed on missing `rightsNote`; after the fix, `npm run check` reported 0 errors, 0 warnings, and 0 hints; `npm test` built 1 page and passed 1 test.
+- Commit: not committed
+- Next step: Commit the validated content contract, then begin Task 3 by expanding the page shell tests before implementing the editorial layout.
