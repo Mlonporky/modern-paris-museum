@@ -1,0 +1,22 @@
+{
+  "name": "modern-paris-museum",
+  "version": "1.0.0",
+  "description": "光线照进现代巴黎：一个用 Astro 制作的中文线上美术馆",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "test": "npm run build && node --test",
+    "verify": "npm run check && npm test && node scripts/check-images.mjs"
+  },
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "astro": "^6.4.8"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "typescript": "^6.0.3"
+  }
+}

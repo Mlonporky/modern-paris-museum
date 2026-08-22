@@ -50,10 +50,18 @@ Append-only project history for session handoff. New sessions should read only t
 - Commit: not committed
 - Next step: Commit the `agent.md` deletion and this worklog update, then resume Astro Task 1 in the next session.
 
-## 2026-08-21 23:31 — Canonical agent instructions confirmed
+## 2026-08-21 23:31 - Canonical agent instructions confirmed
 
 - Status: completed
 - Changed: The project now keeps only canonical `AGENTS.md`; lowercase `agent.md` has been removed.
 - Verified: Git commit reported deletion of `agent.md` and update of `worklog.md`; `AGENTS.md` was not part of the change.
 - Commit: `3fbd49b docs: remove duplicate agent note`
 - Next step: Resume Astro Task 1 by normalizing the untracked `package.json`, installing Astro dependencies, and writing the failing smoke test.
+
+## 2026-08-22 09:57 - Task 1 Astro project bootstrap
+
+- Status: completed
+- Changed: Normalized `package.json`; installed Astro 6, `@astrojs/check`, and TypeScript; added `.gitignore`, `astro.config.mjs`, `tsconfig.json`, the generated-page smoke test, and the smallest Chinese Astro homepage.
+- Verified: The smoke test first failed with the expected missing `dist/index.html` error; `npm run check` reported 0 errors, 0 warnings, and 0 hints; `npm test` built 1 static page and passed 1 test; `git diff --check` was clean.
+- Commit: not committed
+- Next step: Commit the Task 1 bootstrap, then begin Task 2 by defining the artwork content collection schema and its intentionally failing schema check.
