@@ -133,6 +133,26 @@ figcaption { margin-top: 10px; color: var(--muted); font-size: 0.82rem; }
 .essay-columns { columns: 2 280px; column-gap: 42px; }
 .essay-columns p { margin-top: 0; break-inside: avoid; }
 .market-essay { margin-bottom: 28px; }
+.quiz-section { padding: 36px 0 96px; background: var(--paper-light); }
+.quiz-form { width: min(820px, calc(100% - 40px)); margin: 0 auto; }
+.quiz-form fieldset { margin: 0 0 24px; padding: 28px; border: 1px solid var(--line); }
+.quiz-form legend { padding: 0 10px; font-family: var(--serif); font-size: 1.25rem; }
+.quiz-form legend span { margin-right: 14px; color: var(--red); }
+.quiz-form label { display: flex; gap: 12px; padding: 9px 0; cursor: pointer; }
+.quiz-form input { margin-top: 0.45em; accent-color: var(--red); }
+.quiz-form button {
+  border: 0;
+  padding: 13px 24px;
+  color: white;
+  background: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+.question-feedback { min-height: 1.75em; margin-bottom: 0; font-weight: 700; }
+.question-feedback[data-status="correct"] { color: #28613d; }
+.question-feedback[data-status="incorrect"] { color: var(--red); }
+.quiz-summary { font-family: var(--serif); font-size: 1.4rem; }
+.noscript-note { width: min(820px, calc(100% - 40px)); margin: 20px auto 0; }
 .site-footer {
   width: var(--content);
   margin: 80px auto 0;

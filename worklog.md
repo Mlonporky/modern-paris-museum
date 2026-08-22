@@ -121,3 +121,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: The pre-implementation page test failed on the missing bridge text; `npm run check` reported 0 errors, 0 warnings, and 0 hints; `npm test` built 1 page and passed 7 tests; local DOM/layout inspection confirmed the bridge sections at desktop and 390px mobile widths, with no horizontal overflow requiring changes.
 - Commit: not committed
 - Next step: Commit the bridge essays, then begin Task 9 by testing the pure quiz-answer function before building the interactive quiz component.
+
+## 2026-08-22 10:17 - Task 9 educational quiz
+
+- Status: completed
+- Changed: Added the pure `evaluateAnswer` function, three-question accessible Quiz component, client-side feedback behavior, no-JavaScript answer note, page wiring, quiz styles, and unit/generated-markup tests.
+- Verified: The first test failed with the expected missing-module error; the logic-only test then passed while quiz markup remained absent; after fixing strict DOM types, `npm run check` reported 0 errors, 0 warnings, and 0 hints; `npm test` built 1 page and passed 9 tests; browser interaction produced the expected empty, partial, and `3 / 3` feedback states.
+- Commit: not committed
+- Next step: Commit the quiz, then begin Task 10 by adding source links, local-image validation, and accessibility guards.

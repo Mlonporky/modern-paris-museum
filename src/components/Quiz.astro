@@ -1,0 +1,100 @@
+---
+const questions = [
+  {
+    prompt: '奥斯曼改造最直接改变了画家看到的什么？',
+    options: [
+      ['a', '中世纪教堂内部'],
+      ['b', '宽阔大道、统一立面与新的街头人流'],
+      ['c', '远洋航海路线'],
+    ],
+    correct: 'b',
+    explanation: '新道路、建筑立面和行人关系，构成卡耶博特等艺术家的现代城市题材。',
+  },
+  {
+    prompt: '莫奈为什么可以把圣拉扎尔车站当作现代风景？',
+    options: [
+      ['a', '蒸汽、钢铁和光线形成了新的视觉环境'],
+      ['b', '车站里完全没有工业设备'],
+      ['c', '铁路只服务贵族'],
+    ],
+    correct: 'a',
+    explanation: '莫奈把屋架、机车与蒸汽当作光和空气来观察，使工业空间获得风景画的表现力。',
+  },
+  {
+    prompt: '独立展览为什么也属于经济史？',
+    options: [
+      ['a', '因为画家停止出售作品'],
+      ['b', '因为政府替所有作品定价'],
+      ['c', '因为艺术家重新组织了展示、宣传和接触买家的方式'],
+    ],
+    correct: 'c',
+    explanation: '绕开官方沙龙意味着承担风险，也创造了画家、画商、评论家和收藏者之间的新市场渠道。',
+  },
+];
+---
+
+<section class="quiz-section" id="quiz" aria-labelledby="quiz-title">
+  <div class="section-intro">
+    <p class="eyebrow">离开展厅前</p>
+    <h2 id="quiz-title">你看见的不只是光</h2>
+    <p>用三道题检查自己是否找到了作品背后的城市、工业与市场。</p>
+  </div>
+  <form class="quiz-form" data-quiz>
+    {questions.map((question, index) => (
+      <fieldset
+        data-quiz-question={index + 1}
+        data-correct={question.correct}
+        data-explanation={question.explanation}
+      >
+        <legend><span>{String(index + 1).padStart(2, '0')}</span>{question.prompt}</legend>
+        {question.options.map(([value, label]) => (
+          <label>
+            <input type="radio" name={`question-${index + 1}`} value={value} />
+            <span>{label}</span>
+          </label>
+        ))}
+        <p class="question-feedback" aria-live="polite"></p>
+      </fieldset>
+    ))}
+    <button type="submit">查看答案</button>
+    <p class="quiz-summary" aria-live="polite"></p>
+  </form>
+  <noscript>
+    <p class="noscript-note">启用 JavaScript 后可以获得即时反馈。答案依次为：宽阔大道；蒸汽与钢铁形成的新视觉环境；独立展览重组市场渠道。</p>
+  </noscript>
+</section>
+
+<script>
+  import { evaluateAnswer } from '../scripts/quiz.mjs';
+
+  document.querySelectorAll<HTMLFormElement>('[data-quiz]').forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      let correctCount = 0;
+      let answeredCount = 0;
+      const fields = form.querySelectorAll<HTMLFieldSetElement>('[data-quiz-question]');
+
+      fields.forEach((field) => {
+        const checked = field.querySelector<HTMLInputElement>('input:checked');
+        const result = evaluateAnswer(
+          checked?.value ?? '',
+          field.dataset.correct ?? '',
+          field.dataset.explanation ?? '',
+        );
+        const feedback = field.querySelector<HTMLParagraphElement>('.question-feedback');
+        if (!feedback) return;
+        feedback.textContent = result.message;
+        feedback.dataset.status = result.status;
+        if (result.status !== 'unanswered') answeredCount += 1;
+        if (result.status === 'correct') correctCount += 1;
+      });
+
+      const summary = form.querySelector<HTMLParagraphElement>('.quiz-summary');
+      if (summary) {
+        summary.textContent = answeredCount === fields.length
+          ? `你答对了 ${correctCount} / ${fields.length} 题。`
+          : `已回答 ${answeredCount} / ${fields.length} 题。`;
+      }
+    });
+  });
+</script>
