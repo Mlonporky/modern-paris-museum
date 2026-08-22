@@ -41,3 +41,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: `git show --stat HEAD` listed only `AGENTS.md`, `agent.md`, and `worklog.md`; `git status --short --branch` listed only untracked `package.json`.
 - Commit: `cfb66e2 docs: add session handoff worklog`
 - Next step: In the next session, read only the latest worklog tail, then resume Astro Task 1 by normalizing and installing dependencies for `package.json`.
+
+## 2026-08-21 23:30 — Remove duplicate agent instructions
+
+- Status: completed
+- Changed: Removed the redundant lowercase `agent.md`; retained canonical `AGENTS.md`, which Codex discovers automatically.
+- Verified: Before deletion, confirmed both files existed and the working tree contained only the unfinished untracked `package.json`.
+- Commit: not committed
+- Next step: Commit the `agent.md` deletion and this worklog update, then resume Astro Task 1 in the next session.
