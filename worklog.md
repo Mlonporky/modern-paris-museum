@@ -49,3 +49,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: Before deletion, confirmed both files existed and the working tree contained only the unfinished untracked `package.json`.
 - Commit: not committed
 - Next step: Commit the `agent.md` deletion and this worklog update, then resume Astro Task 1 in the next session.
+
+## 2026-08-21 23:31 — Canonical agent instructions confirmed
+
+- Status: completed
+- Changed: The project now keeps only canonical `AGENTS.md`; lowercase `agent.md` has been removed.
+- Verified: Git commit reported deletion of `agent.md` and update of `worklog.md`; `AGENTS.md` was not part of the change.
+- Commit: `3fbd49b docs: remove duplicate agent note`
+- Next step: Resume Astro Task 1 by normalizing the untracked `package.json`, installing Astro dependencies, and writing the failing smoke test.
