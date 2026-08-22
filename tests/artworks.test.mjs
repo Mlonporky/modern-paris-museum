@@ -18,5 +18,12 @@ test('Monet chapter connects the station to industrial change', async () => {
   const html = await readFile(outputFile, 'utf8');
   assert.match(html, /data-artwork-id="gare-saint-lazare"/);
   assert.match(html, /克洛德·莫奈/);
-  assert.equal((html.match(/data-artwork-id=/g) ?? []).length, 2);
+  assert.ok((html.match(/data-artwork-id=/g) ?? []).length >= 2);
+});
+
+test('Renoir chapter renders leisure and consumption content', async () => {
+  const html = await readFile(outputFile, 'utf8');
+  assert.match(html, /data-artwork-id="moulin-de-la-galette"/);
+  assert.match(html, /皮埃尔-奥古斯特·雷诺阿/);
+  assert.equal((html.match(/data-artwork-id=/g) ?? []).length, 3);
 });

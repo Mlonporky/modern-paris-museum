@@ -97,3 +97,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: The pre-entry test failed because the second artwork was absent; the image is 1271467 bytes; `npm run check` reported 0 errors, 0 warnings, and 0 hints; `npm test` built 1 page and passed 4 tests.
 - Commit: not committed
 - Next step: Commit the Monet chapter, then begin Task 6 by adding Renoir's leisure and consumption chapter.
+
+## 2026-08-22 10:09 - Task 6 Renoir leisure chapter
+
+- Status: completed
+- Changed: Added Renoir's `煎饼磨坊的舞会` artwork record and local reproduction; expanded artwork tests for the third chapter; made the earlier Monet count assertion resilient to later chapters.
+- Verified: The pre-entry test failed because the third artwork was absent; the image is 937418 bytes; `npm run check` reported 0 errors, 0 warnings, and 0 hints; after updating the stale count assertion, `npm test` built 1 page and passed 5 tests.
+- Commit: not committed
+- Next step: Commit the Renoir chapter, then begin Task 7 by adding Manet's service-economy chapter and the final curatorial-order assertion.
