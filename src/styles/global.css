@@ -153,6 +153,16 @@ figcaption { margin-top: 10px; color: var(--muted); font-size: 0.82rem; }
 .question-feedback[data-status="incorrect"] { color: var(--red); }
 .quiz-summary { font-family: var(--serif); font-size: 1.4rem; }
 .noscript-note { width: min(820px, calc(100% - 40px)); margin: 20px auto 0; }
+.sources-section { width: var(--content); margin: 0 auto; padding-bottom: 48px; }
+.source-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr);
+  gap: clamp(36px, 7vw, 96px);
+}
+.source-grid h3 { font-size: 1.5rem; }
+.source-grid li { margin-bottom: 20px; }
+.source-grid p { margin: 4px 0; }
+.source-note { color: var(--muted); font-size: 0.85rem; }
 .site-footer {
   width: var(--content);
   margin: 80px auto 0;
@@ -174,6 +184,7 @@ figcaption { margin-top: 10px; color: var(--muted); font-size: 0.82rem; }
   .timeline-event { min-height: 0; margin-bottom: 18px; }
   .context-essay { grid-template-columns: 1fr; padding: 64px 0; }
   .essay-columns { columns: 1; }
+  .source-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 520px) {
   .site-nav { display: block; }

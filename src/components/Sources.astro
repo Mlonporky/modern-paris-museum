@@ -1,0 +1,46 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  artworks: CollectionEntry<'artworks'>[];
+}
+
+const { artworks } = Astro.props;
+const researchSources = [
+  ['芝加哥艺术博物馆：卡耶博特学术目录', 'https://publications.artic.edu/caillebotte/reader/paintingsanddrawings/section/574/p-42'],
+  ['英国国家美术馆：莫奈《圣拉扎尔火车站》', 'https://www.nationalgallery.org.uk/paintings/claude-monet-the-gare-st-lazare'],
+  ['奥赛博物馆：雷诺阿《煎饼磨坊的舞会》', 'https://www.musee-orsay.fr/fr/oeuvres/bal-du-moulin-de-la-galette-497'],
+  ['科陶德美术馆：马奈《女神游乐厅的吧台》', 'https://gallerycollections.courtauld.ac.uk/pro3871'],
+  ['奥赛博物馆教育资料：19世纪巴黎', 'https://www.musee-orsay.fr/sites/default/files/2020-12/fiche_visite_paris.pdf'],
+];
+---
+
+<section class="sources-section" id="sources" aria-labelledby="sources-title">
+  <div class="section-intro">
+    <p class="eyebrow">继续探索</p>
+    <h2 id="sources-title">资料与图片来源</h2>
+    <p>策展文字以收藏机构资料为起点，图片文件另行标明来源与权利状态。</p>
+  </div>
+  <div class="source-grid">
+    <div>
+      <h3>四幅作品</h3>
+      <ol>
+        {artworks.map(({ id, data }) => (
+          <li>
+            <p><strong>{data.artist}《{data.title}》</strong></p>
+            <p><a data-artwork-source={id} href={data.sourceUrl}>收藏机构记录</a></p>
+            <p><a data-image-source={id} href={data.imageSourceUrl}>图片文件与权利说明</a></p>
+            <p>{data.rightsNote}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+    <div>
+      <h3>研究与教育资料</h3>
+      <ul>
+        {researchSources.map(([label, url]) => <li><a href={url}>{label}</a></li>)}
+      </ul>
+      <p class="source-note">链接与权利状态核查日期：2026年8月21日。</p>
+    </div>
+  </div>
+</section>

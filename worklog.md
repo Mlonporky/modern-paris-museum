@@ -129,3 +129,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: The first test failed with the expected missing-module error; the logic-only test then passed while quiz markup remained absent; after fixing strict DOM types, `npm run check` reported 0 errors, 0 warnings, and 0 hints; `npm test` built 1 page and passed 9 tests; browser interaction produced the expected empty, partial, and `3 / 3` feedback states.
 - Commit: not committed
 - Next step: Commit the quiz, then begin Task 10 by adding source links, local-image validation, and accessibility guards.
+
+## 2026-08-22 10:20 - Task 10 sources and quality checks
+
+- Status: completed
+- Changed: Added the metadata-driven Sources component, four artwork and four image-source link markers, research links, local JPEG integrity script, accessibility test, and responsive source styles.
+- Verified: The pre-source test failed on missing source markers; `npm run verify` reported 0 errors, 0 warnings, and 0 hints, passed 11 tests, and validated all four JPEGs; browser inspection passed at 1440px, 768px, and 390px with no layout issue, and console logs had no errors or warnings.
+- Commit: not committed
+- Next step: Commit the quality and citation layer, then begin Task 11 by writing the beginner-facing README and GitHub Pages workflow.
