@@ -13,3 +13,10 @@ test('first artwork renders structured interpretation and source data', async ()
   assert.match(html, /芝加哥艺术博物馆/);
   assert.match(html, /alt="雨后的宽阔巴黎街口/);
 });
+
+test('Monet chapter connects the station to industrial change', async () => {
+  const html = await readFile(outputFile, 'utf8');
+  assert.match(html, /data-artwork-id="gare-saint-lazare"/);
+  assert.match(html, /克洛德·莫奈/);
+  assert.equal((html.match(/data-artwork-id=/g) ?? []).length, 2);
+});

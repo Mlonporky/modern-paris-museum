@@ -89,3 +89,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: The pre-implementation timeline test found 0 events as expected; `npm run check` reported 0 errors, 0 warnings, and 0 hints; `npm test` built 1 page and passed 3 tests.
 - Commit: not committed
 - Next step: Commit the timeline stage, then begin Task 5 by adding the remaining three artwork records and their local image checks.
+
+## 2026-08-22 10:07 - Task 5 Monet railway chapter
+
+- Status: completed
+- Changed: Added Monet's `圣拉扎尔火车站` artwork record and its local Wikimedia Commons reproduction; expanded artwork tests to require the second ordered chapter.
+- Verified: The pre-entry test failed because the second artwork was absent; the image is 1271467 bytes; `npm run check` reported 0 errors, 0 warnings, and 0 hints; `npm test` built 1 page and passed 4 tests.
+- Commit: not committed
+- Next step: Commit the Monet chapter, then begin Task 6 by adding Renoir's leisure and consumption chapter.
