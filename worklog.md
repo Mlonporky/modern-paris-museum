@@ -73,3 +73,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: The first `npm run check` failed on missing `rightsNote`; after the fix, `npm run check` reported 0 errors, 0 warnings, and 0 hints; `npm test` built 1 page and passed 1 test.
 - Commit: not committed
 - Next step: Commit the validated content contract, then begin Task 3 by expanding the page shell tests before implementing the editorial layout.
+
+## 2026-08-22 10:03 - Task 3 editorial shell and first artwork
+
+- Status: completed
+- Changed: Added the base layout, cover/navigation header, reusable artwork renderer, editorial stylesheet, local Caillebotte reproduction, collection-backed homepage rendering, and two expanded page tests.
+- Verified: The pre-layout tests failed on missing navigation and artwork markup; the image is 610711 bytes; `npm run check` reported 0 errors, 0 warnings, and 0 hints; `npm test` built 1 page and passed 2 tests; local visual inspection passed at desktop and 390px mobile widths; browser console had no errors or warnings.
+- Commit: not committed
+- Next step: Commit the editorial shell, then begin Task 4 by adding and validating the historical timeline collection.

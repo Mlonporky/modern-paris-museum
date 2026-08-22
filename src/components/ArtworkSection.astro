@@ -1,0 +1,29 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'artworks'>;
+  Content: any;
+  base: string;
+}
+
+const { entry, Content, base } = Astro.props;
+const { data } = entry;
+---
+
+<article class="artwork" id={entry.id} data-artwork-id={entry.id}>
+  <figure class="artwork-figure">
+    <img src={`${base}${data.image}`} alt={data.imageAlt} loading="lazy" />
+    <figcaption>
+      <strong>{data.artist}，《{data.title}》</strong>，{data.year}。{data.museum}。
+    </figcaption>
+  </figure>
+  <div class="artwork-copy">
+    <p class="eyebrow">作品 {String(data.order).padStart(2, '0')} · {data.theme}</p>
+    <h2>{data.title}</h2>
+    <p class="artwork-meta">{data.artistOriginal} · {data.originalTitle} · {data.year}</p>
+    <div class="artwork-essay">
+      <Content />
+    </div>
+  </div>
+</article>

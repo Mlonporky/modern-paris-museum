@@ -1,0 +1,33 @@
+---
+interface Props {
+  heroImage: string;
+  heroAlt: string;
+}
+
+const { heroImage, heroAlt } = Astro.props;
+---
+
+<header class="hero">
+  <nav class="site-nav" aria-label="展览目录">
+    <a class="site-mark" href="#top">现代巴黎展览室</a>
+    <div class="nav-links">
+      <a href="#timeline">时间线</a>
+      <a href="#artworks">作品</a>
+      <a href="#market">艺术市场</a>
+      <a href="#quiz">小测验</a>
+      <a href="#sources">资料来源</a>
+    </div>
+  </nav>
+  <div class="hero-grid" id="top">
+    <div class="hero-copy">
+      <p class="eyebrow">线上专题展 · 19世纪巴黎</p>
+      <h1>光线照进<br />现代巴黎</h1>
+      <p class="dek">从印象派看城市、社会与经济</p>
+      <p>当街道变宽、火车加速、商业照亮夜晚，画家也开始寻找新的观看方式。</p>
+    </div>
+    <figure class="hero-image">
+      <img src={heroImage} alt={heroAlt} fetchpriority="high" />
+      <figcaption>卡耶博特笔下的新巴黎：整齐、辽阔，也略显疏离。</figcaption>
+    </figure>
+  </div>
+</header>

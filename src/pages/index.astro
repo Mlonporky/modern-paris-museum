@@ -1,18 +1,32 @@
 ---
-const title = '光线照进现代巴黎';
+import { getCollection, render } from 'astro:content';
+import ArtworkSection from '../components/ArtworkSection.astro';
+import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const entries = (await getCollection('artworks')).sort((a, b) => a.data.order - b.data.order);
+const artworks = await Promise.all(entries.map(async (entry) => ({ entry, Content: (await render(entry)).Content })));
+const hero = artworks[0].entry.data;
+const base = import.meta.env.BASE_URL;
 ---
 
-<!doctype html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{title}</title>
-  </head>
-  <body>
-    <main>
-      <h1>{title}</h1>
-      <p>从印象派作品出发，认识19世纪巴黎如何成为现代城市。</p>
-    </main>
-  </body>
-</html>
+<BaseLayout
+  title="光线照进现代巴黎｜印象派与现代城市生活"
+  description="从四幅作品理解19世纪巴黎的城市改造、工业化、消费文化与艺术市场。"
+>
+  <Header heroImage={`${base}${hero.image}`} heroAlt={hero.imageAlt} />
+  <main class="exhibition-main" id="main-content">
+    <section class="section-intro" aria-labelledby="exhibition-title">
+      <p class="eyebrow">策展引言</p>
+      <h2 id="exhibition-title">为什么是此时，为什么是巴黎？</h2>
+      <p>印象派并非只是一种画法。它也是快速变化的城市、交通、消费和观看习惯留下的视觉记录。</p>
+    </section>
+    <section class="artworks" id="artworks" aria-label="四幅核心作品">
+      {artworks.map(({ entry, Content }) => <ArtworkSection entry={entry} Content={Content} base={base} />)}
+    </section>
+    <section id="timeline" aria-label="历史时间线"></section>
+    <section id="market" aria-label="艺术市场"></section>
+    <section id="quiz" aria-label="小测验"></section>
+    <section id="sources" aria-label="资料来源"></section>
+  </main>
+</BaseLayout>
