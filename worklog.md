@@ -153,3 +153,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: Commit `e98e52f` was created after the final `npm run verify` passed; external GitHub repository creation and push were intentionally not performed.
 - Commit: `e98e52f docs: add project guide and Pages deployment`
 - Next step: Create the public GitHub repository manually, add `origin`, push `main`, enable GitHub Actions as the Pages source, and then record the live URL in README.
+
+## 2026-08-22 - Online deployment and final handoff
+
+- Status: completed
+- Changed: Pushed the project to GitHub, fixed the GitHub Pages project-base slash so all four image URLs include `/modern-paris-museum/`, and added the live exhibition link to `README.md`.
+- Verified: Remote `main` is synchronized; the Pages workflow completed successfully; the live page returned 200 and the user confirmed the images are visible.
+- Commit: `e6de79d fix: include Pages base path slash`; `e794fab docs: link live exhibition`
+- Next step: No required project work remains; rest, then optionally improve the exhibition in a future session.
