@@ -105,3 +105,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: The pre-entry test failed because the third artwork was absent; the image is 937418 bytes; `npm run check` reported 0 errors, 0 warnings, and 0 hints; after updating the stale count assertion, `npm test` built 1 page and passed 5 tests.
 - Commit: not committed
 - Next step: Commit the Renoir chapter, then begin Task 7 by adding Manet's service-economy chapter and the final curatorial-order assertion.
+
+## 2026-08-22 10:11 - Task 7 Manet service-economy chapter
+
+- Status: completed
+- Changed: Added Manet's `女神游乐厅的吧台` artwork record and local reproduction; expanded artwork tests to require four chapters in curatorial order and the historical clarification about Manet's exhibition history; made the earlier Renoir count assertion resilient to later chapters.
+- Verified: The pre-entry order test failed with only three artwork IDs; the image is 821103 bytes; `npm run check` reported 0 errors, 0 warnings, and 0 hints; after updating the stale count assertion, `npm test` built 1 page and passed 6 tests.
+- Commit: not committed
+- Next step: Commit the fourth artwork, then begin Task 8 by adding the city-change and art-market bridge essays.

@@ -25,5 +25,17 @@ test('Renoir chapter renders leisure and consumption content', async () => {
   const html = await readFile(outputFile, 'utf8');
   assert.match(html, /data-artwork-id="moulin-de-la-galette"/);
   assert.match(html, /皮埃尔-奥古斯特·雷诺阿/);
-  assert.equal((html.match(/data-artwork-id=/g) ?? []).length, 3);
+  assert.ok((html.match(/data-artwork-id=/g) ?? []).length >= 3);
+});
+
+test('final page renders four artwork chapters in curatorial order', async () => {
+  const html = await readFile(outputFile, 'utf8');
+  const ids = [...html.matchAll(/data-artwork-id="([^"]+)"/g)].map((match) => match[1]);
+  assert.deepEqual(ids, [
+    'paris-street-rainy-day',
+    'gare-saint-lazare',
+    'moulin-de-la-galette',
+    'bar-at-the-folies-bergere',
+  ]);
+  assert.match(html, /马奈是印象派的重要先驱/);
 });
