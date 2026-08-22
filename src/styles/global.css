@@ -97,6 +97,29 @@ figcaption { margin-top: 10px; color: var(--muted); font-size: 0.82rem; }
 .artwork-meta { color: var(--blue); }
 .artwork-figure img { width: 100%; max-height: 74vh; object-fit: contain; background: #ddd4c4; }
 .artwork-essay h2 { margin: 36px 0 8px; color: var(--red); font-size: 1rem; letter-spacing: 0.08em; }
+.timeline-section { padding: 28px 0 84px; background: var(--ink); color: var(--paper-light); }
+.timeline-section .section-intro { padding-top: 72px; }
+.timeline-list {
+  width: var(--content);
+  margin: 0 auto;
+  padding: 0 0 24px;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(230px, 1fr));
+  gap: 20px;
+  overflow-x: auto;
+  list-style: none;
+  scroll-snap-type: x proximity;
+}
+.timeline-event {
+  min-height: 310px;
+  padding: 24px;
+  border-top: 4px solid var(--gold);
+  background: rgba(255, 255, 255, 0.06);
+  scroll-snap-align: start;
+}
+.timeline-year { margin: 0; color: var(--gold); font-family: var(--serif); font-size: 2.2rem; }
+.timeline-category { margin: 6px 0 24px; color: #d4c8b4; font-size: 0.72rem; letter-spacing: 0.12em; }
+.timeline-event h3 { margin: 0; font-size: 1.4rem; }
 .site-footer {
   width: var(--content);
   margin: 80px auto 0;
@@ -114,6 +137,8 @@ figcaption { margin-top: 10px; color: var(--muted); font-size: 0.82rem; }
   .hero-grid { padding: 48px 0 64px; }
   .artwork { padding: 64px 0; }
   .artwork:nth-child(even) .artwork-figure { order: 0; }
+  .timeline-list { display: block; overflow: visible; }
+  .timeline-event { min-height: 0; margin-bottom: 18px; }
 }
 @media (max-width: 520px) {
   .site-nav { display: block; }

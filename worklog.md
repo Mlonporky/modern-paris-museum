@@ -81,3 +81,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: The pre-layout tests failed on missing navigation and artwork markup; the image is 610711 bytes; `npm run check` reported 0 errors, 0 warnings, and 0 hints; `npm test` built 1 page and passed 2 tests; local visual inspection passed at desktop and 390px mobile widths; browser console had no errors or warnings.
 - Commit: not committed
 - Next step: Commit the editorial shell, then begin Task 4 by adding and validating the historical timeline collection.
+
+## 2026-08-22 10:05 - Task 4 historical timeline collection
+
+- Status: completed
+- Changed: Added the typed `timeline` collection, eight ordered events across four categories, the semantic timeline component, responsive timeline styles, homepage collection query, and a rendering test.
+- Verified: The pre-implementation timeline test found 0 events as expected; `npm run check` reported 0 errors, 0 warnings, and 0 hints; `npm test` built 1 page and passed 3 tests.
+- Commit: not committed
+- Next step: Commit the timeline stage, then begin Task 5 by adding the remaining three artwork records and their local image checks.

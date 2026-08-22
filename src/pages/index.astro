@@ -3,9 +3,11 @@ import { getCollection, render } from 'astro:content';
 import ArtworkSection from '../components/ArtworkSection.astro';
 import Header from '../components/Header.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Timeline from '../components/Timeline.astro';
 
 const entries = (await getCollection('artworks')).sort((a, b) => a.data.order - b.data.order);
 const artworks = await Promise.all(entries.map(async (entry) => ({ entry, Content: (await render(entry)).Content })));
+const timelineEvents = (await getCollection('timeline')).sort((a, b) => a.data.order - b.data.order);
 const hero = artworks[0].entry.data;
 const base = import.meta.env.BASE_URL;
 ---
@@ -21,10 +23,10 @@ const base = import.meta.env.BASE_URL;
       <h2 id="exhibition-title">为什么是此时，为什么是巴黎？</h2>
       <p>印象派并非只是一种画法。它也是快速变化的城市、交通、消费和观看习惯留下的视觉记录。</p>
     </section>
+    <Timeline events={timelineEvents} />
     <section class="artworks" id="artworks" aria-label="四幅核心作品">
       {artworks.map(({ entry, Content }) => <ArtworkSection entry={entry} Content={Content} base={base} />)}
     </section>
-    <section id="timeline" aria-label="历史时间线"></section>
     <section id="market" aria-label="艺术市场"></section>
     <section id="quiz" aria-label="小测验"></section>
     <section id="sources" aria-label="资料来源"></section>

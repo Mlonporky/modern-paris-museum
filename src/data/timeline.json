@@ -1,0 +1,66 @@
+[
+  {
+    "id": "railway-1837",
+    "order": 1,
+    "yearLabel": "1837",
+    "title": "铁路抵达圣拉扎尔",
+    "description": "巴黎至圣日耳曼铁路从圣拉扎尔一带出发，车站随后不断扩建，铁路逐渐改变通勤、货物流动和城市时间感。",
+    "category": "工业"
+  },
+  {
+    "id": "department-store-1852",
+    "order": 2,
+    "yearLabel": "1852",
+    "title": "百货商店重塑消费",
+    "description": "博西科加入并改造乐蓬马歇，固定价格、橱窗陈列和大规模商品组织推动巴黎进入新的大众消费时代。",
+    "category": "社会"
+  },
+  {
+    "id": "haussmann-1853",
+    "order": 3,
+    "yearLabel": "1853",
+    "title": "奥斯曼开始改造巴黎",
+    "description": "拿破仑三世任命奥斯曼为塞纳省行政长官。宽阔大道、下水道、公园和统一建筑立面重新安排了城市空间。",
+    "category": "城市"
+  },
+  {
+    "id": "folies-bergere-1869",
+    "order": 4,
+    "yearLabel": "1869",
+    "title": "女神游乐厅开业",
+    "description": "大型音乐厅把舞台表演、灯光、酒水与人群观看结合起来，成为现代都市夜生活和服务消费的象征。",
+    "category": "社会"
+  },
+  {
+    "id": "station-growth-1870",
+    "order": 5,
+    "yearLabel": "1870",
+    "title": "车站进入大客流时代",
+    "description": "圣拉扎尔车站每年处理约一千一百万名郊区乘客，玻璃、钢铁、蒸汽和拥挤人流组成新的城市景观。",
+    "category": "工业"
+  },
+  {
+    "id": "first-exhibition-1874",
+    "order": 6,
+    "yearLabel": "1874",
+    "title": "第一次独立展览",
+    "description": "一群艺术家绕开官方沙龙，自行组织展览。独立展示让艺术家、评论家、画商和公众建立新的市场关系。",
+    "category": "艺术市场"
+  },
+  {
+    "id": "third-exhibition-1877",
+    "order": 7,
+    "yearLabel": "1877",
+    "title": "现代生活成为展览主角",
+    "description": "第三次印象派展览集中呈现车站、街道、舞会等题材，卡耶博特还参与资助、组织和作品借展。",
+    "category": "艺术市场"
+  },
+  {
+    "id": "bar-salon-1882",
+    "order": 8,
+    "yearLabel": "1882",
+    "title": "马奈在沙龙展出吧台",
+    "description": "《女神游乐厅的吧台》进入官方沙龙，把服务劳动、商品和娱乐空间中的复杂观看关系带到公众面前。",
+    "category": "社会"
+  }
+]

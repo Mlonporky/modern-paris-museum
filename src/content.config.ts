@@ -1,5 +1,5 @@
 import { defineCollection } from 'astro:content';
-import { glob } from 'astro/loaders';
+import { file, glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
 const artworks = defineCollection({
@@ -22,4 +22,15 @@ const artworks = defineCollection({
   }),
 });
 
-export const collections = { artworks };
+const timeline = defineCollection({
+  loader: file('./src/data/timeline.json'),
+  schema: z.object({
+    order: z.number().int().positive(),
+    yearLabel: z.string().min(1),
+    title: z.string().min(1),
+    description: z.string().min(20),
+    category: z.enum(['城市', '工业', '社会', '艺术市场']),
+  }),
+});
+
+export const collections = { artworks, timeline };

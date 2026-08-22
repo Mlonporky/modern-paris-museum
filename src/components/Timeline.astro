@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  events: CollectionEntry<'timeline'>[];
+}
+
+const { events } = Astro.props;
+---
+
+<section class="timeline-section" id="timeline" aria-labelledby="timeline-title">
+  <div class="section-intro">
+    <p class="eyebrow">历史坐标</p>
+    <h2 id="timeline-title">一座城市怎样变成“现代”</h2>
+    <p>作品里的街道、火车和娱乐场所，都来自几十年间累积的基础设施、资本与生活方式变化。</p>
+  </div>
+  <ol class="timeline-list">
+    {events.map(({ id, data }) => (
+      <li class="timeline-event" data-timeline-event={id} data-category={data.category}>
+        <p class="timeline-year">{data.yearLabel}</p>
+        <p class="timeline-category">{data.category}</p>
+        <h3>{data.title}</h3>
+        <p>{data.description}</p>
+      </li>
+    ))}
+  </ol>
+</section>
