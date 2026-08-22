@@ -33,3 +33,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: Searched `AGENTS.md` for the user-address, tail-read, append-only, and secret-exclusion rules; read only the recent worklog tail; confirmed all three files appear as untracked Git changes.
 - Commit: not committed
 - Next step: Commit `AGENTS.md`, `agent.md`, and `worklog.md` separately from the partial Task 1 `package.json`, then resume Astro Task 1 in a future session.
+
+## 2026-08-21 23:29 — Worklog system committed
+
+- Status: completed
+- Changed: Saved the session handoff rules and append-only worklog as an isolated Git milestone; the unfinished Task 1 `package.json` remains outside that commit.
+- Verified: `git show --stat HEAD` listed only `AGENTS.md`, `agent.md`, and `worklog.md`; `git status --short --branch` listed only untracked `package.json`.
+- Commit: `cfb66e2 docs: add session handoff worklog`
+- Next step: In the next session, read only the latest worklog tail, then resume Astro Task 1 by normalizing and installing dependencies for `package.json`.
