@@ -137,3 +137,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: The pre-source test failed on missing source markers; `npm run verify` reported 0 errors, 0 warnings, and 0 hints, passed 11 tests, and validated all four JPEGs; browser inspection passed at 1440px, 768px, and 390px with no layout issue, and console logs had no errors or warnings.
 - Commit: not committed
 - Next step: Commit the quality and citation layer, then begin Task 11 by writing the beginner-facing README and GitHub Pages workflow.
+
+## 2026-08-22 10:22 - Task 11 release documentation
+
+- Status: completed
+- Changed: Added the beginner-facing `README.md` and the GitHub Pages Actions workflow for builds on `main`.
+- Verified: Final `npm run verify` reported 0 errors, passed 11 tests, and validated all four JPEGs; `git status --short` before the worklog update contained only `README.md` and `.github/workflows/deploy.yml`.
+- Commit: not committed
+- Next step: Commit the release documentation, then create the public GitHub repository and connect/push this local history manually.
