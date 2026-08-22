@@ -2,6 +2,8 @@
 
 一个用 Astro Content Collections 制作的中文线上美术馆。第一期通过四幅作品解释19世纪巴黎的城市改造、铁路、消费文化、服务劳动与艺术市场。
 
+在线参观：[光线照进现代巴黎](https://mlonporky.github.io/modern-paris-museum/)
+
 ## 我在这个项目中学习什么
 
 - HTML 如何组织网页内容
