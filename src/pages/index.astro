@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import ArtworkSection from '../components/ArtworkSection.astro';
 import Header from '../components/Header.astro';
+import MarketEssay from '../components/MarketEssay.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Timeline from '../components/Timeline.astro';
 
@@ -24,10 +25,11 @@ const base = import.meta.env.BASE_URL;
       <p>印象派并非只是一种画法。它也是快速变化的城市、交通、消费和观看习惯留下的视觉记录。</p>
     </section>
     <Timeline events={timelineEvents} />
+    <MarketEssay variant="city" />
     <section class="artworks" id="artworks" aria-label="四幅核心作品">
       {artworks.map(({ entry, Content }) => <ArtworkSection entry={entry} Content={Content} base={base} />)}
     </section>
-    <section id="market" aria-label="艺术市场"></section>
+    <MarketEssay variant="market" />
     <section id="quiz" aria-label="小测验"></section>
     <section id="sources" aria-label="资料来源"></section>
   </main>

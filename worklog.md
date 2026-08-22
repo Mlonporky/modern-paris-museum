@@ -113,3 +113,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: The pre-entry order test failed with only three artwork IDs; the image is 821103 bytes; `npm run check` reported 0 errors, 0 warnings, and 0 hints; after updating the stale count assertion, `npm test` built 1 page and passed 6 tests.
 - Commit: not committed
 - Next step: Commit the fourth artwork, then begin Task 8 by adding the city-change and art-market bridge essays.
+
+## 2026-08-22 10:13 - Task 8 city and art-market bridge essays
+
+- Status: completed
+- Changed: Added the reusable `MarketEssay` component with city and market variants; placed the two essays around the artwork sequence; added responsive magazine-column styling and page assertions for urban transformation, independent exhibitions, and Durand-Ruel.
+- Verified: The pre-implementation page test failed on the missing bridge text; `npm run check` reported 0 errors, 0 warnings, and 0 hints; `npm test` built 1 page and passed 7 tests; local DOM/layout inspection confirmed the bridge sections at desktop and 390px mobile widths, with no horizontal overflow requiring changes.
+- Commit: not committed
+- Next step: Commit the bridge essays, then begin Task 9 by testing the pure quiz-answer function before building the interactive quiz component.

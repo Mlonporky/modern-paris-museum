@@ -120,6 +120,19 @@ figcaption { margin-top: 10px; color: var(--muted); font-size: 0.82rem; }
 .timeline-year { margin: 0; color: var(--gold); font-family: var(--serif); font-size: 2.2rem; }
 .timeline-category { margin: 6px 0 24px; color: #d4c8b4; font-size: 0.72rem; letter-spacing: 0.12em; }
 .timeline-event h3 { margin: 0; font-size: 1.4rem; }
+.context-essay {
+  width: var(--content);
+  margin: 0 auto;
+  padding: 96px 0;
+  display: grid;
+  grid-template-columns: minmax(240px, 0.7fr) minmax(0, 1.3fr);
+  gap: clamp(36px, 8vw, 120px);
+  border-bottom: 1px solid var(--line);
+}
+.context-essay h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); }
+.essay-columns { columns: 2 280px; column-gap: 42px; }
+.essay-columns p { margin-top: 0; break-inside: avoid; }
+.market-essay { margin-bottom: 28px; }
 .site-footer {
   width: var(--content);
   margin: 80px auto 0;
@@ -139,6 +152,8 @@ figcaption { margin-top: 10px; color: var(--muted); font-size: 0.82rem; }
   .artwork:nth-child(even) .artwork-figure { order: 0; }
   .timeline-list { display: block; overflow: visible; }
   .timeline-event { min-height: 0; margin-bottom: 18px; }
+  .context-essay { grid-template-columns: 1fr; padding: 64px 0; }
+  .essay-columns { columns: 1; }
 }
 @media (max-width: 520px) {
   .site-nav { display: block; }

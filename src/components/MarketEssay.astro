@@ -1,0 +1,42 @@
+---
+interface Props {
+  variant: 'city' | 'market';
+}
+
+const essays = {
+  city: {
+    id: 'city-change',
+    label: '历史与社会',
+    titleId: 'city-change-title',
+    title: '城市为何改变',
+    className: 'city-essay',
+    paragraphs: [
+      '19世纪中叶的巴黎面临人口增长、拥堵、卫生和政治治理问题。奥斯曼主持的改造以宽阔道路、排水系统、公园、车站和统一街面重组城市。工程提高了流通效率，也依赖大规模融资、征地和房地产开发。',
+      '新大道让军队、商品和人群更快移动；拆迁与租金变化则把许多低收入居民推向外围。现代化不是所有人平均获得的礼物。画家笔下整洁明亮的城市，也包含空间被重新分配后的社会代价。',
+    ],
+  },
+  market: {
+    id: 'market',
+    label: '经济观察',
+    titleId: 'market-title',
+    title: '谁为新艺术买单',
+    className: 'market-essay',
+    paragraphs: [
+      '官方沙龙长期决定艺术家能否接触公众和买家。印象派艺术家组织独立展览，意味着他们必须自己承担场地、宣传、作品选择和声誉风险。展览不仅是审美反叛，也是一种新的市场组织方式。',
+      '画商保罗·杜朗-吕埃尔通过购买、展览和联系海外收藏者帮助建立持续市场；卡耶博特既是画家，也是资助者和收藏者。艺术价值由创作、评论、展示、资本与收藏共同形成，而不是作品完成时就自动确定。',
+    ],
+  },
+} as const;
+
+const essay = essays[Astro.props.variant];
+---
+
+<section class:list={['context-essay', essay.className]} id={essay.id} aria-labelledby={essay.titleId}>
+  <div>
+    <p class="eyebrow">{essay.label}</p>
+    <h2 id={essay.titleId}>{essay.title}</h2>
+  </div>
+  <div class="essay-columns">
+    {essay.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+  </div>
+</section>

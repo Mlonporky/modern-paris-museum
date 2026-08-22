@@ -14,3 +14,11 @@ test('generated homepage has Chinese metadata and primary navigation', async () 
   assert.match(html, /href="#quiz"/);
   assert.match(html, /href="#sources"/);
 });
+
+test('page explains both urban transformation and the new art market', async () => {
+  const html = await readFile(outputFile, 'utf8');
+  assert.match(html, /城市为何改变/);
+  assert.match(html, /谁为新艺术买单/);
+  assert.match(html, /画商保罗·杜朗-吕埃尔/);
+  assert.match(html, /独立展览/);
+});
