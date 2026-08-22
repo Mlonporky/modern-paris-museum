@@ -145,3 +145,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: Final `npm run verify` reported 0 errors, passed 11 tests, and validated all four JPEGs; `git status --short` before the worklog update contained only `README.md` and `.github/workflows/deploy.yml`.
 - Commit: not committed
 - Next step: Commit the release documentation, then create the public GitHub repository and connect/push this local history manually.
+
+## 2026-08-22 10:23 - Task 11 release commit handoff
+
+- Status: completed
+- Changed: Recorded the release documentation milestone after committing `README.md` and `.github/workflows/deploy.yml`.
+- Verified: Commit `e98e52f` was created after the final `npm run verify` passed; external GitHub repository creation and push were intentionally not performed.
+- Commit: `e98e52f docs: add project guide and Pages deployment`
+- Next step: Create the public GitHub repository manually, add `origin`, push `main`, enable GitHub Actions as the Pages source, and then record the live URL in README.
