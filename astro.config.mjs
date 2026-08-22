@@ -8,5 +8,5 @@ const isUserSite = repositoryName === `${repositoryOwner}.github.io`;
 export default defineConfig({
   output: 'static',
   site: isGitHubBuild ? `https://${repositoryOwner}.github.io` : 'http://localhost:4321',
-  base: isGitHubBuild && !isUserSite ? `/${repositoryName}` : '/',
+  base: isGitHubBuild && !isUserSite ? `/${repositoryName}/` : '/',
 });
