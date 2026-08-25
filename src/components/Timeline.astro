@@ -1,11 +1,16 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 
+type TimelineEvent = CollectionEntry<'timeline'> & {
+  artworks: CollectionEntry<'artworks'>[];
+};
+
 interface Props {
-  events: CollectionEntry<'timeline'>[];
+  events: TimelineEvent[];
+  base: string;
 }
 
-const { events } = Astro.props;
+const { events, base } = Astro.props;
 ---
 
 <section class="timeline-section" id="timeline" aria-labelledby="timeline-title">
@@ -14,14 +19,70 @@ const { events } = Astro.props;
     <h2 id="timeline-title">一座城市怎样变成“现代”</h2>
     <p>作品里的街道、火车和娱乐场所，都来自几十年间累积的基础设施、资本与生活方式变化。</p>
   </div>
-  <ol class="timeline-list">
-    {events.map(({ id, data }) => (
-      <li class="timeline-event" data-timeline-event={id} data-category={data.category}>
-        <p class="timeline-year">{data.yearLabel}</p>
-        <p class="timeline-category">{data.category}</p>
-        <h3>{data.title}</h3>
-        <p>{data.description}</p>
-      </li>
-    ))}
-  </ol>
+  <div class="timeline-layout">
+    <nav class="timeline-nav" aria-label="历史事件导航">
+      <p class="timeline-nav-label">选择一个历史节点</p>
+      <ol class="timeline-list">
+        {events.map(({ id, data }, index) => (
+          <li>
+            <button
+              class="timeline-event"
+              type="button"
+              id={`timeline-button-${id}`}
+              data-timeline-event={id}
+              data-category={data.category}
+              data-timeline-button={id}
+              aria-controls={`timeline-panel-${id}`}
+              aria-pressed={index === 0 ? 'true' : 'false'}
+            >
+              <span class="timeline-year">{data.yearLabel}</span>
+              <span class="timeline-category">{data.category}</span>
+              <strong>{data.title}</strong>
+            </button>
+          </li>
+        ))}
+      </ol>
+    </nav>
+
+    <div class="timeline-panels" aria-live="polite">
+      {events.map(({ id, data, artworks }, index) => (
+        <article
+          class="timeline-panel"
+          id={`timeline-panel-${id}`}
+          data-timeline-panel={id}
+          aria-labelledby={`timeline-button-${id}`}
+          hidden={index !== 0}
+        >
+          <div class="timeline-panel-copy">
+            <p class="timeline-panel-kicker">{data.yearLabel} · {data.category}</p>
+            <h3>{data.title}</h3>
+            <p>{data.description}</p>
+          </div>
+
+          {artworks.length > 0 ? (
+            <div class="timeline-artwork-grid" aria-label={`${data.title}相关作品`}>
+              {artworks.map((artwork) => (
+                <a class="timeline-artwork-card" href={`#${artwork.id}`} data-artwork-card={artwork.id}>
+                  <img
+                    src={`${base}${artwork.data.image}`}
+                    alt={artwork.data.imageAlt}
+                    loading="lazy"
+                  />
+                  <div class="timeline-artwork-card-copy">
+                    <p>{artwork.data.artist} · {artwork.data.year}</p>
+                    <h4>{artwork.data.title}</h4>
+                    <span>查看作品解读</span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          ) : (
+            <p class="timeline-empty">这个历史节点暂时没有直接关联的作品，我们先把它作为背景资料保留。</p>
+          )}
+        </article>
+      ))}
+    </div>
+  </div>
 </section>
+
+<script src="../scripts/timeline.mjs"></script>

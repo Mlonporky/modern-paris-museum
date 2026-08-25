@@ -7,6 +7,10 @@ const outputFile = new URL('../dist/index.html', import.meta.url);
 test('timeline renders eight ordered events and all four categories', async () => {
   const html = await readFile(outputFile, 'utf8');
   assert.equal((html.match(/data-timeline-event=/g) ?? []).length, 8);
+  assert.equal((html.match(/data-timeline-button=/g) ?? []).length, 8);
+  assert.equal((html.match(/data-timeline-panel=/g) ?? []).length, 8);
+  assert.match(html, /aria-controls="timeline-panel-[^"]+"/);
+  assert.match(html, /data-artwork-card="gare-saint-lazare"/);
   for (const category of ['城市', '工业', '社会', '艺术市场']) {
     assert.match(html, new RegExp(`data-category="${category}"`));
   }

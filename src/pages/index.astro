@@ -10,7 +10,22 @@ import Timeline from '../components/Timeline.astro';
 
 const entries = (await getCollection('artworks')).sort((a, b) => a.data.order - b.data.order);
 const artworks = await Promise.all(entries.map(async (entry) => ({ entry, Content: (await render(entry)).Content })));
-const timelineEvents = (await getCollection('timeline')).sort((a, b) => a.data.order - b.data.order);
+const artworkByTimeline = new Map<string, typeof entries>();
+
+for (const entry of entries) {
+  for (const timelineId of entry.data.timelineIds) {
+    const linkedArtworks = artworkByTimeline.get(timelineId) ?? [];
+    linkedArtworks.push(entry);
+    artworkByTimeline.set(timelineId, linkedArtworks);
+  }
+}
+
+const timelineEvents = (await getCollection('timeline'))
+  .sort((a, b) => a.data.order - b.data.order)
+  .map((event) => ({
+    ...event,
+    artworks: artworkByTimeline.get(event.id) ?? [],
+  }));
 const hero = artworks[0].entry.data;
 const base = import.meta.env.BASE_URL;
 ---
@@ -26,7 +41,7 @@ const base = import.meta.env.BASE_URL;
       <h2 id="exhibition-title">为什么是此时，为什么是巴黎？</h2>
       <p>印象派并非只是一种画法。它也是快速变化的城市、交通、消费和观看习惯留下的视觉记录。</p>
     </section>
-    <Timeline events={timelineEvents} />
+    <Timeline events={timelineEvents} base={base} />
     <MarketEssay variant="city" />
     <section class="artworks" id="artworks" aria-label="四幅核心作品">
       {artworks.map(({ entry, Content }) => <ArtworkSection entry={entry} Content={Content} base={base} />)}
