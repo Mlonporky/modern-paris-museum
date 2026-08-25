@@ -161,3 +161,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: Remote `main` is synchronized; the Pages workflow completed successfully; the live page returned 200 and the user confirmed the images are visible.
 - Commit: `e6de79d fix: include Pages base path slash`; `e794fab docs: link live exhibition`
 - Next step: No required project work remains; rest, then optionally improve the exhibition in a future session.
+
+## 2026-08-25 15:56 - Interactive timeline artwork navigator
+
+- Status: completed
+- Changed: Reworked the timeline into a black exhibition-room selector; generated event-to-artwork cards from existing `timelineIds`; added deep-linkable client-side selection, artwork jump links, responsive horizontal mobile navigation, dark theme color, and interaction markup tests.
+- Verified: `npm run verify` passed with 0 Astro errors, 0 warnings, 11 tests passed, and all four local images validated; desktop and 390px mobile browser previews showed the selected event panel without page overflow.
+- Commit: `46223b8 feat: make timeline the artwork navigator`
+- Next step: Decide whether to add more representative artworks for the historical nodes that currently show the contextual empty state, then consider reducing or restructuring the long-form artwork sections.
