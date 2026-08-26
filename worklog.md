@@ -185,3 +185,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: `npm run verify` passed with 0 Astro errors, 0 warnings, 11 tests passed, and all four local images validated; browser preview confirmed the 1852 event, the gray intro label, no viewer bar, and the scrollable Renoir artwork viewer.
 - Commit: `97189a9 refine: simplify artwork detail chrome`
 - Next step: Continue visual review from the current browser preview; no further implementation is required for this adjustment.
+
+## 2026-08-25 21:13 - Remove repeated city context section
+
+- Status: completed
+- Changed: Changed the `策展引言` label to the dark ink color and removed the `城市为何改变` city-and-society essay from below the timeline so the event descriptions lead directly into the artwork area without repeating the artwork explanations.
+- Verified: `npm run verify` passed with 0 Astro errors, 0 warnings, 11 tests passed, and all four local images validated; generated HTML still contains the timeline's Haussmann event and market essay but no longer contains the repeated city essay.
+- Commit: `21f339c refine: remove repeated historical essay`
+- Next step: Review the simplified sequence in the browser when local preview access is available again.
