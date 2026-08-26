@@ -21,10 +21,7 @@ const { artworks, base } = Astro.props;
     data-artwork-viewer={entry.id}
     aria-labelledby={`artwork-viewer-title-${entry.id}`}
   >
-    <div class="artwork-viewer-bar">
-      <p class="eyebrow">作品焦点 · {String(entry.data.order).padStart(2, '0')}</p>
-      <button type="button" class="artwork-viewer-close" data-viewer-close>关闭</button>
-    </div>
+    <button type="button" class="artwork-viewer-close" data-viewer-close>关闭</button>
     <figure class="artwork-viewer-figure">
       <img src={`${base}${entry.data.image}`} alt={entry.data.imageAlt} />
       <figcaption>{entry.data.artist}，《{entry.data.title}》，{entry.data.year} · {entry.data.museum}</figcaption>

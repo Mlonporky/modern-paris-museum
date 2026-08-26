@@ -10,6 +10,7 @@ test('generated homepage has Chinese metadata and the exhibition viewer', async 
   assert.match(html, /<title>光线照进现代巴黎/);
   assert.match(html, /name="description"/);
   assert.doesNotMatch(html, /class="site-nav"/);
+  assert.doesNotMatch(html, /class="artwork-viewer-bar"/);
   assert.equal((html.match(/data-artwork-viewer=/g) ?? []).length, 4);
   assert.match(html, /data-artwork-open="gare-saint-lazare"/);
 });
