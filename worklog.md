@@ -177,3 +177,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: `npm run verify` passed with 0 Astro errors, 0 warnings, 11 tests passed, and all four local images validated; browser preview confirmed no navigation, black hero, four viewers, enlarged artwork, and scrollable detail content.
 - Commit: `53bd1ee feat: add immersive artwork viewer`
 - Next step: Review the visual proportions in the browser and decide whether the viewer should show one work at a time in a more minimal full-screen composition or keep the current museum-label framing.
+
+## 2026-08-25 21:00 - Simplify artwork detail chrome
+
+- Status: completed
+- Changed: Removed the artwork viewer's top label bar; kept only a sticky floating close button; changed the main `策展引言` label from an accent color to neutral gray so it does not compete with the black-and-gold timeline.
+- Verified: `npm run verify` passed with 0 Astro errors, 0 warnings, 11 tests passed, and all four local images validated; browser preview confirmed the 1852 event, the gray intro label, no viewer bar, and the scrollable Renoir artwork viewer.
+- Commit: `97189a9 refine: simplify artwork detail chrome`
+- Next step: Continue visual review from the current browser preview; no further implementation is required for this adjustment.
