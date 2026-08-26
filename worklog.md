@@ -169,3 +169,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: `npm run verify` passed with 0 Astro errors, 0 warnings, 11 tests passed, and all four local images validated; desktop and 390px mobile browser previews showed the selected event panel without page overflow.
 - Commit: `46223b8 feat: make timeline the artwork navigator`
 - Next step: Decide whether to add more representative artworks for the historical nodes that currently show the contextual empty state, then consider reducing or restructuring the long-form artwork sections.
+
+## 2026-08-25 20:42 - Immersive artwork viewer and dark hero
+
+- Status: completed
+- Changed: Removed the top navigation bar; changed the hero into a black exhibition-room entrance; added a native scrollable artwork viewer with an enlarged image, close control, and the full artwork essay beneath each image; kept the original long-form sections as the no-JavaScript fallback.
+- Verified: `npm run verify` passed with 0 Astro errors, 0 warnings, 11 tests passed, and all four local images validated; browser preview confirmed no navigation, black hero, four viewers, enlarged artwork, and scrollable detail content.
+- Commit: `53bd1ee feat: add immersive artwork viewer`
+- Next step: Review the visual proportions in the browser and decide whether the viewer should show one work at a time in a more minimal full-screen composition or keep the current museum-label framing.
