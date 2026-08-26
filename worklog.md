@@ -193,3 +193,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: `npm run verify` passed with 0 Astro errors, 0 warnings, 11 tests passed, and all four local images validated; generated HTML still contains the timeline's Haussmann event and market essay but no longer contains the repeated city essay.
 - Commit: `21f339c refine: remove repeated historical essay`
 - Next step: Review the simplified sequence in the browser when local preview access is available again.
+
+## 2026-08-25 22:57 - Device-switch handoff
+
+- Status: in progress
+- Changed: No additional code changes; saved the completed UI work and recorded that local preview inspection is deferred until another device is available.
+- Verified: Git working tree was clean; `main` contains the latest UI commits and is 8 commits ahead of `origin/main`; the latest `npm run verify` passed with 0 Astro errors, 0 warnings, 11 tests passed, and all four local images validated.
+- Commit: pending for this handoff record
+- Next step: On the other device, sync the latest `main` commits, open the preview, and review the black hero, black `策展引言`, timeline-to-artwork flow, and scrollable artwork viewer.
