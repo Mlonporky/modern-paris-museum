@@ -44,7 +44,6 @@ const base = import.meta.env.BASE_URL;
     </section>
     <Timeline events={timelineEvents} base={base} />
     <ArtworkViewer artworks={artworks} base={base} />
-    <MarketEssay variant="city" />
     <section class="artworks" id="artworks" aria-label="四幅核心作品">
       {artworks.map(({ entry, Content }) => <ArtworkSection entry={entry} Content={Content} base={base} />)}
     </section>

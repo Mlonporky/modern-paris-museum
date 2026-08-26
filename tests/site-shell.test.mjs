@@ -17,7 +17,8 @@ test('generated homepage has Chinese metadata and the exhibition viewer', async 
 
 test('page explains both urban transformation and the new art market', async () => {
   const html = await readFile(outputFile, 'utf8');
-  assert.match(html, /城市为何改变/);
+  assert.doesNotMatch(html, /城市为何改变/);
+  assert.match(html, /奥斯曼开始改造巴黎/);
   assert.match(html, /谁为新艺术买单/);
   assert.match(html, /画商保罗·杜朗-吕埃尔/);
   assert.match(html, /独立展览/);
