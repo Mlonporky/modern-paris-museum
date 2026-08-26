@@ -62,7 +62,12 @@ const { events, base } = Astro.props;
           {artworks.length > 0 ? (
             <div class="timeline-artwork-grid" aria-label={`${data.title}相关作品`}>
               {artworks.map((artwork) => (
-                <a class="timeline-artwork-card" href={`#${artwork.id}`} data-artwork-card={artwork.id}>
+                <a
+                  class="timeline-artwork-card"
+                  href={`#${artwork.id}`}
+                  data-artwork-card={artwork.id}
+                  data-artwork-open={artwork.id}
+                >
                   <img
                     src={`${base}${artwork.data.image}`}
                     alt={artwork.data.imageAlt}

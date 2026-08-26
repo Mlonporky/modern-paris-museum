@@ -1,0 +1,43 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface ArtworkView {
+  entry: CollectionEntry<'artworks'>;
+  Content: any;
+}
+
+interface Props {
+  artworks: ArtworkView[];
+  base: string;
+}
+
+const { artworks, base } = Astro.props;
+---
+
+{artworks.map(({ entry, Content }) => (
+  <dialog
+    class="artwork-viewer"
+    id={`artwork-viewer-${entry.id}`}
+    data-artwork-viewer={entry.id}
+    aria-labelledby={`artwork-viewer-title-${entry.id}`}
+  >
+    <div class="artwork-viewer-bar">
+      <p class="eyebrow">作品焦点 · {String(entry.data.order).padStart(2, '0')}</p>
+      <button type="button" class="artwork-viewer-close" data-viewer-close>关闭</button>
+    </div>
+    <figure class="artwork-viewer-figure">
+      <img src={`${base}${entry.data.image}`} alt={entry.data.imageAlt} />
+      <figcaption>{entry.data.artist}，《{entry.data.title}》，{entry.data.year} · {entry.data.museum}</figcaption>
+    </figure>
+    <div class="artwork-viewer-copy">
+      <p class="artwork-viewer-meta">{entry.data.artistOriginal} · {entry.data.originalTitle} · {entry.data.year}</p>
+      <h2 id={`artwork-viewer-title-${entry.id}`}>{entry.data.title}</h2>
+      <p class="artwork-viewer-hint">向下滚动，阅读这幅作品的视觉细节、历史背景和它与现代巴黎的关系。</p>
+      <div class="artwork-viewer-essay">
+        <Content />
+      </div>
+    </div>
+  </dialog>
+))}
+
+<script src="../scripts/artwork-viewer.mjs"></script>

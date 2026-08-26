@@ -4,15 +4,14 @@ import test from 'node:test';
 
 const outputFile = new URL('../dist/index.html', import.meta.url);
 
-test('generated homepage has Chinese metadata and primary navigation', async () => {
+test('generated homepage has Chinese metadata and the exhibition viewer', async () => {
   const html = await readFile(outputFile, 'utf8');
   assert.match(html, /<html lang="zh-CN">/);
   assert.match(html, /<title>光线照进现代巴黎/);
   assert.match(html, /name="description"/);
-  assert.match(html, /href="#timeline"/);
-  assert.match(html, /href="#artworks"/);
-  assert.match(html, /href="#quiz"/);
-  assert.match(html, /href="#sources"/);
+  assert.doesNotMatch(html, /class="site-nav"/);
+  assert.equal((html.match(/data-artwork-viewer=/g) ?? []).length, 4);
+  assert.match(html, /data-artwork-open="gare-saint-lazare"/);
 });
 
 test('page explains both urban transformation and the new art market', async () => {
