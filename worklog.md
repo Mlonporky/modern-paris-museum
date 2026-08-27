@@ -225,3 +225,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: `npm run verify` passed with 0 Astro errors, 0 warnings, 0 hints, 13 tests passed, and all four JPEGs validated; browser computed styles confirmed black backgrounds for the body, hero, curatorial intro, timeline, quiz, and inherited black surfaces for the market, sources, and footer sections; the mobile preview had no horizontal overflow.
 - Commit: pending
 - Next step: Continue visual review from the open all-black preview; the unfinished `2.` request can be handled once its additional detail is provided.
+
+## 2026-08-27 16:20 - Save today's progress
+
+- Status: completed
+- Changed: Recorded today's completed UI work: the full exhibition now uses a black background, artwork explanations appear only inside the click-to-open viewer, and the duplicate long-form artwork sections were removed.
+- Verified: The local preview is available at `http://localhost:4321/`; the latest browser review confirmed the black theme, no horizontal overflow, no console errors, 4 viewer essays, and 0 duplicate artwork sections; `npm run verify` passed with 0 Astro errors, 0 warnings, 0 hints, 13 tests passed, and all four JPEGs validated.
+- Commit: `85372a4 refine: keep artwork details in viewer`; `270f2fb style: unify exhibition on dark theme`
+- Next step: Continue from the open all-black preview; address any additional requirement if the unfinished `2.` item is clarified.
