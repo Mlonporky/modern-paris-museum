@@ -217,3 +217,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: `npm run verify` passed with 0 Astro errors, 0 warnings, 0 hints, 12 tests passed, and all four JPEGs validated; browser preview confirmed the intro background is `rgb(11, 11, 11)`, there are 0 old artwork sections and 4 viewer essays, and opening/closing the Renoir viewer works without console errors.
 - Commit: pending
 - Next step: Continue visual review from the open preview, especially the spacing between the black intro and the black timeline.
+
+## 2026-08-27 12:14 - Full dark exhibition theme
+
+- Status: completed
+- Changed: Unified the whole interface on a black background; changed global text, muted text, accent, border, button, and quiz feedback colors for readable contrast on dark surfaces.
+- Verified: `npm run verify` passed with 0 Astro errors, 0 warnings, 0 hints, 13 tests passed, and all four JPEGs validated; browser computed styles confirmed black backgrounds for the body, hero, curatorial intro, timeline, quiz, and inherited black surfaces for the market, sources, and footer sections; the mobile preview had no horizontal overflow.
+- Commit: pending
+- Next step: Continue visual review from the open all-black preview; the unfinished `2.` request can be handled once its additional detail is provided.

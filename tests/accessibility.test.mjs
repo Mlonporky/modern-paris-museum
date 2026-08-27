@@ -25,3 +25,14 @@ test('built CSS contains reduced-motion and visible-focus rules', async () => {
   assert.match(css, /prefers-reduced-motion/);
   assert.match(css, /focus-visible/);
 });
+
+test('built CSS keeps the full exhibition on a dark theme', async () => {
+  const { readdir } = await import('node:fs/promises');
+  const files = await readdir(cssFile);
+  const cssName = files.find((name) => name.endsWith('.css'));
+  assert.ok(cssName, 'expected a generated CSS asset');
+  const css = await readFile(new URL(cssName, cssFile), 'utf8');
+  assert.match(css, /body\{[^}]*color:var\(--paper-light\)[^}]*background:#0b0b0b/);
+  assert.match(css, /\.exhibition-intro\{[^}]*background:#0b0b0b/);
+  assert.match(css, /\.quiz-section\{[^}]*background:#0b0b0b/);
+});
