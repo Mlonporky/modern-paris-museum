@@ -201,3 +201,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: Git working tree was clean; `main` contains the latest UI commits and is 8 commits ahead of `origin/main`; the latest `npm run verify` passed with 0 Astro errors, 0 warnings, 11 tests passed, and all four local images validated.
 - Commit: pending for this handoff record
 - Next step: On the other device, sync the latest `main` commits, open the preview, and review the black hero, black `策展引言`, timeline-to-artwork flow, and scrollable artwork viewer.
+
+## 2026-08-27 11:27 - Restore local preview
+
+- Status: completed
+- Changed: No source changes; restarted the local Astro preview after the device-switch handoff and kept the working preview page open.
+- Verified: `npm run dev -- --host 0.0.0.0` served `http://localhost:4321/`; the browser loaded the exhibition title and 18 images with no console errors or warnings; the 1852 timeline selection updated the URL hash; the 390px viewport had no horizontal overflow; `npm run verify` passed with 0 Astro diagnostics, 11 tests, and four valid JPEGs. The current in-app browser does not expose native `dialog.showModal()`, so its artwork links use the intended long-form fallback rather than the modal viewer.
+- Commit: pending
+- Next step: Continue visual review from the open local preview; if cross-browser modal behavior is needed in this in-app browser, add a non-dialog viewer fallback in a separate task.
