@@ -9,7 +9,8 @@ test('page has one h1, a skip link, descriptive images, and source links', async
   const html = await readFile(htmlFile, 'utf8');
   assert.equal((html.match(/<h1[ >]/g) ?? []).length, 1);
   assert.match(html, /class="skip-link" href="#main-content"/);
-  assert.equal((html.match(/data-artwork-id=/g) ?? []).length, 4);
+  assert.equal((html.match(/data-artwork-viewer=/g) ?? []).length, 4);
+  assert.equal((html.match(/data-artwork-id=/g) ?? []).length, 0);
   assert.ok((html.match(/<img[^>]+alt="[^"]{20,}"/g) ?? []).length >= 5);
   assert.equal((html.match(/data-artwork-source=/g) ?? []).length, 4);
   assert.equal((html.match(/data-image-source=/g) ?? []).length, 4);

@@ -1,6 +1,5 @@
 ---
 import { getCollection, render } from 'astro:content';
-import ArtworkSection from '../components/ArtworkSection.astro';
 import ArtworkViewer from '../components/ArtworkViewer.astro';
 import Header from '../components/Header.astro';
 import MarketEssay from '../components/MarketEssay.astro';
@@ -37,16 +36,13 @@ const base = import.meta.env.BASE_URL;
 >
   <Header heroImage={`${base}${hero.image}`} heroAlt={hero.imageAlt} />
   <main class="exhibition-main" id="main-content">
-    <section class="section-intro" aria-labelledby="exhibition-title">
+    <section class="section-intro exhibition-intro" aria-labelledby="exhibition-title">
       <p class="eyebrow intro-label">策展引言</p>
       <h2 id="exhibition-title">为什么是此时，为什么是巴黎？</h2>
       <p>印象派并非只是一种画法。它也是快速变化的城市、交通、消费和观看习惯留下的视觉记录。</p>
     </section>
     <Timeline events={timelineEvents} base={base} />
     <ArtworkViewer artworks={artworks} base={base} />
-    <section class="artworks" id="artworks" aria-label="四幅核心作品">
-      {artworks.map(({ entry, Content }) => <ArtworkSection entry={entry} Content={Content} base={base} />)}
-    </section>
     <MarketEssay variant="market" />
     <Quiz />
     <Sources artworks={entries} />

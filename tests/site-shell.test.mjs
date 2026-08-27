@@ -11,7 +11,10 @@ test('generated homepage has Chinese metadata and the exhibition viewer', async 
   assert.match(html, /name="description"/);
   assert.doesNotMatch(html, /class="site-nav"/);
   assert.doesNotMatch(html, /class="artwork-viewer-bar"/);
+  assert.match(html, /class="section-intro exhibition-intro"/);
+  assert.doesNotMatch(html, /class="artworks"/);
   assert.equal((html.match(/data-artwork-viewer=/g) ?? []).length, 4);
+  assert.equal((html.match(/data-artwork-id=/g) ?? []).length, 0);
   assert.match(html, /data-artwork-open="gare-saint-lazare"/);
 });
 

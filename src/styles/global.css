@@ -81,20 +81,16 @@ figcaption { margin-top: 10px; color: var(--muted); font-size: 0.82rem; }
 }
 .section-intro .intro-label { color: var(--ink); }
 .section-intro h2 { margin: 0 0 24px; font-size: clamp(2.4rem, 5vw, 4.8rem); }
-.artworks { width: var(--content); margin: 0 auto; }
-.artwork {
-  padding: 96px 0;
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
-  gap: clamp(36px, 7vw, 100px);
-  align-items: start;
-  border-top: 1px solid var(--line);
+.exhibition-intro {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 100px max(20px, calc((100% - 760px) / 2)) 48px;
+  color: var(--paper-light);
+  background: #0b0b0b;
 }
-.artwork:nth-child(even) .artwork-figure { order: 2; }
-.artwork h2 { margin: 0; font-size: clamp(2.4rem, 5vw, 4.5rem); }
-.artwork-meta { color: var(--blue); }
-.artwork-figure img { width: 100%; max-height: 74vh; object-fit: contain; background: #ddd4c4; }
-.artwork-essay h2 { margin: 36px 0 8px; color: var(--red); font-size: 1rem; letter-spacing: 0.08em; }
+.exhibition-intro .intro-label { color: var(--gold); }
+.exhibition-intro > p:last-child { color: #d7d0c6; }
 .artwork-viewer {
   width: min(1180px, calc(100% - 28px));
   max-width: none;
@@ -304,10 +300,8 @@ figcaption { margin-top: 10px; color: var(--muted); font-size: 0.82rem; }
 @media (max-width: 800px) {
   :root { --content: min(100% - 28px, 680px); }
   body { font-size: 16px; }
-  .hero-grid, .artwork { grid-template-columns: 1fr; }
+  .hero-grid { grid-template-columns: 1fr; }
   .hero-grid { padding: 48px 0 64px; }
-  .artwork { padding: 64px 0; }
-  .artwork:nth-child(even) .artwork-figure { order: 0; }
   .timeline-layout { grid-template-columns: 1fr; }
   .timeline-nav { position: static; }
   .timeline-list {

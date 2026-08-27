@@ -209,3 +209,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: `npm run dev -- --host 0.0.0.0` served `http://localhost:4321/`; the browser loaded the exhibition title and 18 images with no console errors or warnings; the 1852 timeline selection updated the URL hash; the 390px viewport had no horizontal overflow; `npm run verify` passed with 0 Astro diagnostics, 11 tests, and four valid JPEGs. The current in-app browser does not expose native `dialog.showModal()`, so its artwork links use the intended long-form fallback rather than the modal viewer.
 - Commit: pending
 - Next step: Continue visual review from the open local preview; if cross-browser modal behavior is needed in this in-app browser, add a non-dialog viewer fallback in a separate task.
+
+## 2026-08-27 11:38 - Black curatorial intro and viewer-only artwork details
+
+- Status: completed
+- Changed: Made the curatorial introduction a full-width black section with light text; removed the duplicate long-form artwork section from the homepage; kept each artwork essay only inside its expandable viewer; removed the unused `ArtworkSection` component and stale artwork-section styles; updated structural tests for the new rendering contract.
+- Verified: `npm run verify` passed with 0 Astro errors, 0 warnings, 0 hints, 12 tests passed, and all four JPEGs validated; browser preview confirmed the intro background is `rgb(11, 11, 11)`, there are 0 old artwork sections and 4 viewer essays, and opening/closing the Renoir viewer works without console errors.
+- Commit: pending
+- Next step: Continue visual review from the open preview, especially the spacing between the black intro and the black timeline.
