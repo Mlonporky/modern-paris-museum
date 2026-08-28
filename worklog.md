@@ -247,5 +247,5 @@ Append-only project history for session handoff. New sessions should read only t
 - Status: completed
 - Changed: Wrapped the three quiz questions in a stacked card layout; added correct, incorrect, and unanswered card states, staggered submit animation, score feedback, and a replay label on the submit button; added a generated-markup assertion for the stack wrapper.
 - Verified: Browser interaction showed `3 / 3` with green cards and replayable feedback, partial submission showed `2 / 3` with incorrect and unanswered states, and 390px mobile layout had no horizontal overflow; `npm run verify` passed with 0 Astro diagnostics, 13 tests, and four valid JPEGs.
-- Commit: pending
+- Commit: `e90cdee feat: add stacked quiz interaction`
 - Next step: Review the quiz card rhythm together with the surrounding market and sources sections in the next visual pass.
