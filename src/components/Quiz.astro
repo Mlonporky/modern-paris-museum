@@ -40,22 +40,24 @@ const questions = [
     <p>用三道题检查自己是否找到了作品背后的城市、工业与市场。</p>
   </div>
   <form class="quiz-form" data-quiz>
-    {questions.map((question, index) => (
-      <fieldset
-        data-quiz-question={index + 1}
-        data-correct={question.correct}
-        data-explanation={question.explanation}
-      >
-        <legend><span>{String(index + 1).padStart(2, '0')}</span>{question.prompt}</legend>
-        {question.options.map(([value, label]) => (
-          <label>
-            <input type="radio" name={`question-${index + 1}`} value={value} />
-            <span>{label}</span>
-          </label>
-        ))}
-        <p class="question-feedback" aria-live="polite"></p>
-      </fieldset>
-    ))}
+    <div class="quiz-stack">
+      {questions.map((question, index) => (
+        <fieldset
+          data-quiz-question={index + 1}
+          data-correct={question.correct}
+          data-explanation={question.explanation}
+        >
+          <legend><span>{String(index + 1).padStart(2, '0')}</span>{question.prompt}</legend>
+          {question.options.map(([value, label]) => (
+            <label>
+              <input type="radio" name={`question-${index + 1}`} value={value} />
+              <span>{label}</span>
+            </label>
+          ))}
+          <p class="question-feedback" aria-live="polite"></p>
+        </fieldset>
+      ))}
+    </div>
     <button type="submit">查看答案</button>
     <p class="quiz-summary" aria-live="polite"></p>
   </form>
@@ -85,6 +87,7 @@ const questions = [
         if (!feedback) return;
         feedback.textContent = result.message;
         feedback.dataset.status = result.status;
+        field.dataset.result = result.status;
         if (result.status !== 'unanswered') answeredCount += 1;
         if (result.status === 'correct') correctCount += 1;
       });
@@ -95,6 +98,12 @@ const questions = [
           ? `你答对了 ${correctCount} / ${fields.length} 题。`
           : `已回答 ${answeredCount} / ${fields.length} 题。`;
       }
+
+      form.classList.remove('is-submitted');
+      void form.offsetWidth;
+      form.classList.add('is-submitted');
+      const submitButton = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+      if (submitButton) submitButton.textContent = '再看一次';
     });
   });
 </script>

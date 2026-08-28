@@ -241,3 +241,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: Desktop preview reduced the section from about 1054px to 689px; 390px preview had no horizontal overflow; browser console had no errors or warnings; `npm run verify` passed with 0 Astro diagnostics, 13 tests, and four valid JPEGs.
 - Commit: `406f8a4 style: reduce sources visual weight`
 - Next step: Review the reduced sources section in the next visual pass if more proportion adjustments are needed.
+
+## 2026-08-28 18:12 - Quiz card stack and submit interaction
+
+- Status: completed
+- Changed: Wrapped the three quiz questions in a stacked card layout; added correct, incorrect, and unanswered card states, staggered submit animation, score feedback, and a replay label on the submit button; added a generated-markup assertion for the stack wrapper.
+- Verified: Browser interaction showed `3 / 3` with green cards and replayable feedback, partial submission showed `2 / 3` with incorrect and unanswered states, and 390px mobile layout had no horizontal overflow; `npm run verify` passed with 0 Astro diagnostics, 13 tests, and four valid JPEGs.
+- Commit: pending
+- Next step: Review the quiz card rhythm together with the surrounding market and sources sections in the next visual pass.

@@ -21,6 +21,7 @@ test('evaluateAnswer distinguishes missing, correct, and incorrect answers', () 
 test('generated quiz has three fieldsets and a live result region', async () => {
   const html = await readFile(new URL('../dist/index.html', import.meta.url), 'utf8');
   assert.equal((html.match(/data-quiz-question=/g) ?? []).length, 3);
+  assert.match(html, /class="quiz-stack"/);
   assert.match(html, /aria-live="polite"/);
   assert.match(html, /查看答案/);
 });
