@@ -255,5 +255,5 @@ Append-only project history for session handoff. New sessions should read only t
 - Status: completed
 - Changed: Changed the quiz from an expanded vertical list into one overlapping card position; only the front card is interactive, the next card advances with the same submit control, progress text tracks `1 / 3` through `3 / 3`, and the final submission keeps the feedback animation and score summary.
 - Verified: Browser preview showed only one readable front card with two hidden-content deck layers, next-card navigation advanced from question 1 to 3, full submission returned `3 / 3`, empty next-step submission stayed on the current question with guidance, 390px preview had no horizontal overflow, and browser logs had no errors or warnings; `npm run verify` passed with 0 Astro diagnostics, 13 tests, and four valid JPEGs.
-- Commit: pending
+- Commit: `4d7c8ed feat: overlap quiz questions as a deck`
 - Next step: Review whether the deck should support swipe or drag gestures in a later interaction pass.
