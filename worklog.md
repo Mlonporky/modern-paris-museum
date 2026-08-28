@@ -239,5 +239,5 @@ Append-only project history for session handoff. New sessions should read only t
 - Status: completed
 - Changed: Reduced the title, intro spacing, column gap, list spacing, and supporting text size in the sources and research-materials section; added a tighter mobile layout while preserving readable links.
 - Verified: Desktop preview reduced the section from about 1054px to 689px; 390px preview had no horizontal overflow; browser console had no errors or warnings; `npm run verify` passed with 0 Astro diagnostics, 13 tests, and four valid JPEGs.
-- Commit: pending
+- Commit: `406f8a4 style: reduce sources visual weight`
 - Next step: Review the reduced sources section in the next visual pass if more proportion adjustments are needed.
