@@ -265,3 +265,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: Browser preview showed three result rows for both `3 / 3` and partial `2 / 3` submissions while only the last question remained on top; empty answer guidance still worked; 390px result panel fit within 335px with no horizontal overflow; browser logs had no errors or warnings; `npm run verify` passed with 0 Astro diagnostics, 13 tests, and four valid JPEGs.
 - Commit: `673af93 fix: show all quiz results after submit`
 - Next step: Review the final quiz-to-sources transition in the next visual pass.
+
+## 2026-08-28 20:34 - Reframe timeline around artwork periods
+
+- Status: completed
+- Changed: Replaced eight yearly timeline nodes with four larger, chronological artwork periods; assigned each existing artwork to one period; added visible theme summaries while keeping the detailed interpretation in the artwork viewer; added legacy aliases so previous timeline hashes still resolve to the new periods.
+- Verified: `npm run verify` passed with 0 Astro errors, 0 warnings, 0 hints, 13 tests passed, and all four JPEGs validated; browser interaction confirmed all four stages select the expected artwork and summary, old hashes including `#timeline-third-exhibition-1877` resolve correctly, mobile width 390 has no horizontal overflow, and console errors/warnings are empty.
+- Commit: pending
+- Next step: Commit the timeline period restructure and its tests.

@@ -17,11 +17,11 @@ const { events, base } = Astro.props;
   <div class="section-intro">
     <p class="eyebrow">历史坐标</p>
     <h2 id="timeline-title">一座城市怎样变成“现代”</h2>
-    <p>作品里的街道、火车和娱乐场所，都来自几十年间累积的基础设施、资本与生活方式变化。</p>
+    <p>我们不按年份逐格罗列事件，而是沿着四个主题阶段，观察街道、火车、休闲和市场如何进入画面。</p>
   </div>
   <div class="timeline-layout">
-    <nav class="timeline-nav" aria-label="历史事件导航">
-      <p class="timeline-nav-label">选择一个历史节点</p>
+    <nav class="timeline-nav" aria-label="艺术阶段导航">
+      <p class="timeline-nav-label">选择一个作品阶段</p>
       <ol class="timeline-list">
         {events.map(({ id, data }, index) => (
           <li>
@@ -32,6 +32,7 @@ const { events, base } = Astro.props;
               data-timeline-event={id}
               data-category={data.category}
               data-timeline-button={id}
+              data-timeline-aliases={data.legacyIds?.join(',') ?? ''}
               aria-controls={`timeline-panel-${id}`}
               aria-pressed={index === 0 ? 'true' : 'false'}
             >
@@ -60,7 +61,7 @@ const { events, base } = Astro.props;
           </div>
 
           {artworks.length > 0 ? (
-            <div class="timeline-artwork-grid" aria-label={`${data.title}相关作品`}>
+            <div class="timeline-artwork-grid" aria-label={`${data.title}中的作品`}>
               {artworks.map((artwork) => (
                 <a
                   class="timeline-artwork-card"
@@ -76,13 +77,15 @@ const { events, base } = Astro.props;
                   <div class="timeline-artwork-card-copy">
                     <p>{artwork.data.artist} · {artwork.data.year}</p>
                     <h4>{artwork.data.title}</h4>
+                    <p class="timeline-artwork-card-theme">{artwork.data.theme}</p>
+                    <p class="timeline-artwork-card-summary">{artwork.data.summary}</p>
                     <span>查看作品解读</span>
                   </div>
                 </a>
               ))}
             </div>
           ) : (
-            <p class="timeline-empty">这个历史节点暂时没有直接关联的作品，我们先把它作为背景资料保留。</p>
+            <p class="timeline-empty">这个阶段暂时没有直接关联的作品，我们先把它作为背景资料保留。</p>
           )}
         </article>
       ))}

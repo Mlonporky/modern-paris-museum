@@ -9,6 +9,7 @@ const artworks = defineCollection({
     originalTitle: z.string().min(1).optional(),
     artist: z.string().min(1),
     artistOriginal: z.string().min(1),
+    summary: z.string().min(20),
     year: z.number().int().min(1800).max(1900),
     theme: z.string().min(1),
     order: z.number().int().positive(),
@@ -30,6 +31,7 @@ const timeline = defineCollection({
     title: z.string().min(1),
     description: z.string().min(20),
     category: z.enum(['城市', '工业', '社会', '艺术市场']),
+    legacyIds: z.array(z.string().min(1)).default([]),
   }),
 });
 

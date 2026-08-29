@@ -3,6 +3,7 @@ title: 女神游乐厅的吧台
 originalTitle: Un bar aux Folies-Bergère
 artist: 爱德华·马奈
 artistOriginal: Édouard Manet
+summary: 吧台把商品、服务劳动和顾客的目光放在同一个画面里，揭出繁华娱乐背后的不平等观看。
 year: 1882
 theme: 服务劳动、商品与阶层目光
 order: 4
@@ -13,8 +14,7 @@ sourceUrl: https://gallerycollections.courtauld.ac.uk/pro3871
 imageSourceUrl: https://commons.wikimedia.org/wiki/File:%22Un_Bar_aux_Folies-Berg%C3%A8re%22_by_%C3%89douard_Manet_%281882%29.jpg
 rightsNote: 原作与该忠实二维复制图标记为公共领域；图片页保留完整权利说明。
 timelineIds:
-  - folies-bergere-1869
-  - bar-salon-1882
+  - exhibitions-market
 ---
 
 ## 看见什么

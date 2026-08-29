@@ -3,6 +3,7 @@ title: 圣拉扎尔火车站
 originalTitle: The Gare St-Lazare
 artist: 克洛德·莫奈
 artistOriginal: Claude Monet
+summary: 车站的屋架、机车和蒸汽把工业工程转化为光与空气的绘画问题，速度本身成为风景。
 year: 1877
 theme: 铁路、工业与速度
 order: 2
@@ -13,9 +14,7 @@ sourceUrl: https://www.nationalgallery.org.uk/paintings/claude-monet-the-gare-st
 imageSourceUrl: https://commons.wikimedia.org/wiki/File:Claude_Monet%2C_The_Gare_St-Lazare%2C_1877.jpg
 rightsNote: 原作与该忠实二维复制图在美国标记为公共领域；图片页保留完整权利说明。
 timelineIds:
-  - railway-1837
-  - station-growth-1870
-  - third-exhibition-1877
+  - industrial-vision
 ---
 
 ## 看见什么

@@ -237,13 +237,15 @@ figcaption { margin-top: 10px; color: var(--muted); font-size: 0.82rem; }
   object-fit: cover;
   background: #292929;
 }
-.timeline-artwork-card-copy { padding: 15px 16px 18px; }
-.timeline-artwork-card-copy p {
+.timeline-artwork-card-copy { padding: 18px 20px 22px; }
+.timeline-artwork-card-copy > p:first-child {
   margin: 0 0 4px;
   color: #c9c0b2;
   font-size: 0.75rem;
 }
-.timeline-artwork-card h4 { margin: 0 0 12px; font-family: var(--serif); font-size: 1.2rem; line-height: 1.25; }
+.timeline-artwork-card h4 { margin: 0 0 10px; font-family: var(--serif); font-size: 1.6rem; line-height: 1.2; }
+.timeline-artwork-card-theme { margin: 0 0 14px; color: var(--gold); font-size: 0.78rem; letter-spacing: 0.08em; }
+.timeline-artwork-card-summary { margin: 0 0 18px; color: #d7d0c6; font-size: 1rem; line-height: 1.65; }
 .timeline-artwork-card span { color: var(--gold); font-size: 0.78rem; }
 .timeline-empty { margin: 0; padding: 28px; color: #c9c0b2; border: 1px dashed rgba(242, 234, 219, 0.26); }
 .context-essay {

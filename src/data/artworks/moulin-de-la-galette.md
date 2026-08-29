@@ -3,6 +3,7 @@ title: 煎饼磨坊的舞会
 originalTitle: Bal du moulin de la Galette
 artist: 皮埃尔-奥古斯特·雷诺阿
 artistOriginal: Pierre-Auguste Renoir
+summary: 舞场把音乐、饮食、服装和社交变成可购买的城市体验，欢乐人群也是现代消费结构的一部分。
 year: 1876
 theme: 休闲、社交与新消费
 order: 3
@@ -13,8 +14,7 @@ sourceUrl: https://www.musee-orsay.fr/fr/oeuvres/bal-du-moulin-de-la-galette-497
 imageSourceUrl: https://commons.wikimedia.org/wiki/File:Renoir%2C_Pierre-Auguste_-_Dance_at_Le_Moulin_de_la_Galette%2C_1876.jpg
 rightsNote: 原作与该忠实二维复制图在美国标记为公共领域；图片页保留完整权利说明。
 timelineIds:
-  - department-store-1852
-  - third-exhibition-1877
+  - leisure-consumption
 ---
 
 ## 看见什么

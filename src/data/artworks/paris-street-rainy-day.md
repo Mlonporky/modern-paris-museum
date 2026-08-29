@@ -3,6 +3,7 @@ title: 巴黎街道；雨天
 originalTitle: Rue de Paris, temps de pluie
 artist: 古斯塔夫·卡耶博特
 artistOriginal: Gustave Caillebotte
+summary: 宽阔的新大道把陌生人并置在同一视野里，秩序化的城市空间反而放大了人与人之间的疏离。
 year: 1877
 theme: 城市改造与陌生人社会
 order: 1
@@ -13,8 +14,7 @@ sourceUrl: https://www.artic.edu/artworks/20684/paris-street-rainy-day
 imageSourceUrl: https://commons.wikimedia.org/wiki/File:Gustave_Caillebotte_-_Paris_Street%3B_Rainy_Day_-_Google_Art_Project.jpg
 rightsNote: 原作与该忠实二维复制图在美国标记为公共领域；图片页保留完整权利说明。
 timelineIds:
-  - haussmann-1853
-  - third-exhibition-1877
+  - city-foundation
 ---
 
 ## 看见什么
