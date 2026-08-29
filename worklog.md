@@ -273,3 +273,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: `npm run verify` passed with 0 Astro errors, 0 warnings, 0 hints, 13 tests passed, and all four JPEGs validated; browser interaction confirmed all four stages select the expected artwork and summary, old hashes including `#timeline-third-exhibition-1877` resolve correctly, mobile width 390 has no horizontal overflow, and console errors/warnings are empty.
 - Commit: `c658641 content: organize timeline around artwork periods`
 - Next step: Commit the timeline period restructure and its tests.
+
+## 2026-08-28 21:30 - Session wrap-up
+
+- Status: completed
+- Changed: No additional source changes; closed the artwork-period timeline update after the user review.
+- Verified: Working tree was clean before this handoff; the local preview remains available at `http://localhost:4321/`; the timeline refactor and tests are committed in `c658641` and the handoff record in `2fa09df`.
+- Commit: pending
+- Next step: If continuing, add more representative artworks to the existing periods without reopening the completed timeline structure.
