@@ -271,5 +271,5 @@ Append-only project history for session handoff. New sessions should read only t
 - Status: completed
 - Changed: Replaced eight yearly timeline nodes with four larger, chronological artwork periods; assigned each existing artwork to one period; added visible theme summaries while keeping the detailed interpretation in the artwork viewer; added legacy aliases so previous timeline hashes still resolve to the new periods.
 - Verified: `npm run verify` passed with 0 Astro errors, 0 warnings, 0 hints, 13 tests passed, and all four JPEGs validated; browser interaction confirmed all four stages select the expected artwork and summary, old hashes including `#timeline-third-exhibition-1877` resolve correctly, mobile width 390 has no horizontal overflow, and console errors/warnings are empty.
-- Commit: pending
+- Commit: `c658641 content: organize timeline around artwork periods`
 - Next step: Commit the timeline period restructure and its tests.
