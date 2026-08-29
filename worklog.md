@@ -279,5 +279,5 @@ Append-only project history for session handoff. New sessions should read only t
 - Status: completed
 - Changed: No additional source changes; closed the artwork-period timeline update after the user review.
 - Verified: Working tree was clean before this handoff; the local preview remains available at `http://localhost:4321/`; the timeline refactor and tests are committed in `c658641` and the handoff record in `2fa09df`.
-- Commit: pending
+- Commit: `12a1dc3 docs: close timeline update session`
 - Next step: If continuing, add more representative artworks to the existing periods without reopening the completed timeline structure.
