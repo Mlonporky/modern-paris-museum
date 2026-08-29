@@ -263,5 +263,5 @@ Append-only project history for session handoff. New sessions should read only t
 - Status: completed
 - Changed: Added a compact `答题回看` panel that rebuilds all three result rows after final submission, including each question, status, and explanation; kept the question cards overlapped and removed the unnecessary focus outline from the score line; repeated submissions replace the old rows instead of duplicating them.
 - Verified: Browser preview showed three result rows for both `3 / 3` and partial `2 / 3` submissions while only the last question remained on top; empty answer guidance still worked; 390px result panel fit within 335px with no horizontal overflow; browser logs had no errors or warnings; `npm run verify` passed with 0 Astro diagnostics, 13 tests, and four valid JPEGs.
-- Commit: pending
+- Commit: `673af93 fix: show all quiz results after submit`
 - Next step: Review the final quiz-to-sources transition in the next visual pass.
