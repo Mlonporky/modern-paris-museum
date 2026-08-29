@@ -372,6 +372,26 @@ figcaption { margin-top: 10px; color: var(--muted); font-size: 0.82rem; }
 .question-feedback[data-status="correct"] { color: #8ec89c; }
 .question-feedback[data-status="incorrect"] { color: var(--red); }
 .quiz-summary { min-height: 1.75em; margin: 18px 0 0; font-family: var(--serif); font-size: 1.4rem; }
+.quiz-results[hidden] { display: none; }
+.quiz-results {
+  margin-top: 24px;
+  padding: 18px 22px 20px;
+  border: 1px solid var(--line);
+  background: rgba(242, 234, 219, 0.025);
+}
+.quiz-results-title { margin: 0 0 12px; color: var(--gold); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; }
+.quiz-results-list { margin: 0; padding-left: 28px; }
+.quiz-results-list li { padding: 10px 0 12px 4px; border-bottom: 1px solid rgba(242, 234, 219, 0.12); }
+.quiz-results-list li:last-child { padding-bottom: 0; border-bottom: 0; }
+.quiz-results-list li::marker { color: var(--muted); font-family: var(--sans); font-size: 0.78rem; }
+.quiz-result-header { display: flex; align-items: baseline; gap: 10px; }
+.quiz-result-number { color: var(--red); font-size: 0.78rem; font-weight: 700; }
+.quiz-result-status { font-size: 0.85rem; white-space: nowrap; }
+.quiz-results-list li[data-result="correct"] .quiz-result-status { color: #8ec89c; }
+.quiz-results-list li[data-result="incorrect"] .quiz-result-status { color: var(--red); }
+.quiz-results-list li[data-result="unanswered"] .quiz-result-status { color: var(--gold); }
+.quiz-result-prompt { color: var(--paper-light); }
+.quiz-result-detail { margin: 4px 0 0; color: var(--muted); font-size: 0.88rem; line-height: 1.55; }
 .quiz-form.is-submitted .quiz-stack fieldset { pointer-events: none; }
 .quiz-form.is-submitted .quiz-stack fieldset { animation: quiz-card-check 420ms ease both; }
 .quiz-form.is-submitted .quiz-stack fieldset:nth-child(2) { animation-delay: 90ms; }
@@ -439,6 +459,8 @@ figcaption { margin-top: 10px; color: var(--muted); font-size: 0.82rem; }
   .context-essay { grid-template-columns: 1fr; padding: 64px 0; }
   .essay-columns { columns: 1; }
   .quiz-actions { align-items: flex-start; }
+  .quiz-result-header { align-items: flex-start; flex-wrap: wrap; gap: 4px 10px; }
+  .quiz-result-prompt { flex-basis: 100%; }
   .sources-section .section-intro { padding: 40px 0 22px; }
   .sources-section .section-intro h2 { font-size: clamp(2rem, 10vw, 2.6rem); }
   .source-grid { grid-template-columns: 1fr; gap: 28px; }

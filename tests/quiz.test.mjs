@@ -23,6 +23,7 @@ test('generated quiz has three fieldsets and a live result region', async () => 
   assert.equal((html.match(/data-quiz-question=/g) ?? []).length, 3);
   assert.match(html, /class="quiz-stack"/);
   assert.match(html, /data-quiz-action/);
+  assert.match(html, /data-quiz-results/);
   assert.match(html, /aria-live="polite"/);
   assert.match(html, /提交答案/);
 });

@@ -46,6 +46,7 @@ const questions = [
           data-quiz-question={index + 1}
           data-correct={question.correct}
           data-explanation={question.explanation}
+          data-prompt={question.prompt}
         >
           <legend><span>{String(index + 1).padStart(2, '0')}</span>{question.prompt}</legend>
           {question.options.map(([value, label]) => (
@@ -62,7 +63,11 @@ const questions = [
       <p class="quiz-progress" aria-live="polite">第 1 / 3 题</p>
       <button type="submit" data-quiz-action>提交答案</button>
     </div>
-    <p class="quiz-summary" aria-live="polite" tabindex="-1"></p>
+    <p class="quiz-summary" aria-live="polite"></p>
+    <div class="quiz-results" data-quiz-results hidden>
+      <p class="quiz-results-title">答题回看</p>
+      <ol class="quiz-results-list" aria-live="polite"></ol>
+    </div>
   </form>
   <noscript>
     <p class="noscript-note">启用 JavaScript 后可以获得即时反馈。答案依次为：宽阔大道；蒸汽与钢铁形成的新视觉环境；独立展览重组市场渠道。</p>
@@ -76,6 +81,8 @@ const questions = [
     const fields = form.querySelectorAll<HTMLFieldSetElement>('[data-quiz-question]');
     const action = form.querySelector<HTMLButtonElement>('[data-quiz-action]');
     const progress = form.querySelector<HTMLParagraphElement>('.quiz-progress');
+    const resultsPanel = form.querySelector<HTMLDivElement>('[data-quiz-results]');
+    const resultsList = resultsPanel?.querySelector<HTMLOListElement>('.quiz-results-list');
     let currentIndex = 0;
 
     const positionCards = (activeIndex: number) => {
@@ -117,6 +124,7 @@ const questions = [
 
       let correctCount = 0;
       let answeredCount = 0;
+      resultsList?.replaceChildren();
 
       fields.forEach((field) => {
         const checked = field.querySelector<HTMLInputElement>('input:checked');
@@ -132,7 +140,36 @@ const questions = [
         field.dataset.result = result.status;
         if (result.status !== 'unanswered') answeredCount += 1;
         if (result.status === 'correct') correctCount += 1;
+
+        if (resultsList) {
+          const item = document.createElement('li');
+          const itemHeader = document.createElement('div');
+          const number = document.createElement('span');
+          const status = document.createElement('strong');
+          const prompt = document.createElement('span');
+          const detail = document.createElement('p');
+
+          item.dataset.result = result.status;
+          itemHeader.className = 'quiz-result-header';
+          number.className = 'quiz-result-number';
+          status.className = 'quiz-result-status';
+          prompt.className = 'quiz-result-prompt';
+          detail.className = 'quiz-result-detail';
+          number.textContent = String(field.dataset.quizQuestion ?? '').padStart(2, '0');
+          status.textContent = result.status === 'correct'
+            ? '答对了'
+            : result.status === 'incorrect' ? '再想想' : '未作答';
+          prompt.textContent = field.dataset.prompt ?? '';
+          detail.textContent = result.message;
+          itemHeader.append(number, status, prompt);
+          item.append(itemHeader, detail);
+          resultsList.append(item);
+        }
       });
+
+      if (resultsPanel && resultsList) {
+        resultsPanel.hidden = false;
+      }
 
       const summary = form.querySelector<HTMLParagraphElement>('.quiz-summary');
       if (summary) {
@@ -145,7 +182,6 @@ const questions = [
       void form.offsetWidth;
       form.classList.add('is-submitted');
       if (action) action.textContent = '再看一次';
-      summary?.focus();
     });
   });
 </script>

@@ -257,3 +257,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: Browser preview showed only one readable front card with two hidden-content deck layers, next-card navigation advanced from question 1 to 3, full submission returned `3 / 3`, empty next-step submission stayed on the current question with guidance, 390px preview had no horizontal overflow, and browser logs had no errors or warnings; `npm run verify` passed with 0 Astro diagnostics, 13 tests, and four valid JPEGs.
 - Commit: `4d7c8ed feat: overlap quiz questions as a deck`
 - Next step: Review whether the deck should support swipe or drag gestures in a later interaction pass.
+
+## 2026-08-28 20:09 - Show every quiz result after deck submission
+
+- Status: completed
+- Changed: Added a compact `答题回看` panel that rebuilds all three result rows after final submission, including each question, status, and explanation; kept the question cards overlapped and removed the unnecessary focus outline from the score line; repeated submissions replace the old rows instead of duplicating them.
+- Verified: Browser preview showed three result rows for both `3 / 3` and partial `2 / 3` submissions while only the last question remained on top; empty answer guidance still worked; 390px result panel fit within 335px with no horizontal overflow; browser logs had no errors or warnings; `npm run verify` passed with 0 Astro diagnostics, 13 tests, and four valid JPEGs.
+- Commit: pending
+- Next step: Review the final quiz-to-sources transition in the next visual pass.
