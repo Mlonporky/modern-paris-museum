@@ -295,5 +295,5 @@ Append-only project history for session handoff. New sessions should read only t
 - Status: completed
 - Changed: Added a slow diagonal background light band, a breathing title halo, a moving beam between century nodes, and staggered node glow pulses; added reduced-motion overrides so the gateway remains static when requested.
 - Verified: `npm run verify` passed with 0 Astro errors, 0 warnings, 0 hints, 14 tests, and four valid JPEGs; browser computed styles confirmed all five cinematic animations, 390px document-width safety, and no browser errors or warnings.
-- Commit: pending
+- Commit: `c0b1be3 style: add cinematic century lighting`
 - Next step: Review whether the gateway should transition with a longer fade when entering the 19th-century exhibition.
