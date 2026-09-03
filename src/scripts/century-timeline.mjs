@@ -9,8 +9,8 @@ if (gateway && buttons.length > 0 && enterButton && status && parisExhibition) {
 
   const setStatus = (centuryId) => {
     status.textContent = centuryId === '19'
-      ? '19世纪巴黎展览已准备好。'
-      : `${centuryId}世纪的展览正在时间轴上等待展开；本期从19世纪开始。`;
+      ? '19世纪的巴黎展厅已经亮起。'
+      : `${centuryId}世纪的展厅尚未点亮；本期展览从19世纪的巴黎开始。`;
   };
 
   const selectCentury = (centuryId) => {

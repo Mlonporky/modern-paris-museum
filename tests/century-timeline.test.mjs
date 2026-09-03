@@ -8,6 +8,8 @@ test('homepage opens with a six-century gateway into the Paris exhibition', asyn
   const html = await readFile(outputFile, 'utf8');
 
   assert.match(html, /class="century-gateway"/);
+  assert.match(html, /从哪一个世纪/);
+  assert.match(html, /巴黎成为现代现场/);
   assert.equal((html.match(/data-century="/g) ?? []).length, 6);
   assert.match(html, /data-century="19"/);
   assert.match(html, /aria-pressed="true"/);

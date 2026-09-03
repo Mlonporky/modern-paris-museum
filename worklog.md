@@ -297,3 +297,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: `npm run verify` passed with 0 Astro errors, 0 warnings, 0 hints, 14 tests, and four valid JPEGs; browser computed styles confirmed all five cinematic animations, 390px document-width safety, and no browser errors or warnings.
 - Commit: `c0b1be3 style: add cinematic century lighting`
 - Next step: Review whether the gateway should transition with a longer fade when entering the 19th-century exhibition.
+
+## 2026-09-02 21:50 - Refine century gateway copy
+
+- Status: completed
+- Changed: Replaced functional placeholder-style gateway labels with restrained curatorial copy about light, cities, daily life, and changing ways of seeing; refined all six century titles and subtitles, the 19th-century CTA, status messages, accessibility label, and mobile exploration hint.
+- Verified: `npm run verify` passed with 0 Astro errors, 0 warnings, 0 hints, 14 tests, and four valid JPEGs; browser confirmed the new headline, 19th-century selection, Paris copy, and no browser errors or warnings.
+- Commit: pending
+- Next step: Review individual century copy or continue with a longer transition into the 19th-century exhibition.

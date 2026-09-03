@@ -3,55 +3,55 @@ const centuries = [
   {
     id: '16',
     label: '16世纪',
-    title: '观看开始改变',
-    detail: '远方、地图与新视野',
+    title: '世界向远方打开',
+    detail: '地图、航海与新的视野',
   },
   {
     id: '17',
     label: '17世纪',
-    title: '光进入室内',
-    detail: '私人生活成为题材',
+    title: '光线落入日常',
+    detail: '室内生活与私人观看',
   },
   {
     id: '18',
     label: '18世纪',
-    title: '城市正在聚集',
-    detail: '公共生活与消费萌芽',
+    title: '城市开始聚拢',
+    detail: '公共空间与消费意识',
   },
   {
     id: '19',
     label: '19世纪',
-    title: '现代巴黎',
-    detail: '街道、铁路与新观看',
+    title: '巴黎成为现代现场',
+    detail: '街道、铁路与观看的转向',
   },
   {
     id: '20',
     label: '20世纪',
-    title: '速度成为风景',
-    detail: '机器、影像与大众社会',
+    title: '速度占据画面',
+    detail: '机器、影像与大众生活',
   },
   {
     id: '21',
     label: '21世纪',
-    title: '屏幕继续发光',
-    detail: '我们正在经历的现在',
+    title: '屏幕成为窗口',
+    detail: '正在生成的当下',
   },
 ];
 ---
 
 <section class="century-gateway" id="century-gateway" data-century-gateway aria-labelledby="century-title">
   <div class="century-gateway-top">
-    <p class="eyebrow">时间入口 · 从世纪开始观看</p>
-    <p class="century-index" aria-hidden="true">01 — 06</p>
+    <p class="eyebrow">时间入口 · 一场跨世纪的观看</p>
+    <p class="century-index" aria-hidden="true">16 → 21 世纪</p>
   </div>
 
   <div class="century-gateway-copy">
-    <p class="century-overline">一条穿过时间的光</p>
-    <h1 id="century-title">从哪个世纪<br /><em>开始观看？</em></h1>
-    <p>沿着光影的轴线移动。选择一个世纪，进入属于它的城市、生活与艺术。</p>
+    <p class="century-overline">时间是一间尚未点灯的展厅</p>
+    <h1 id="century-title">从哪一个世纪<br /><em>开始观看？</em></h1>
+    <p>沿着光线回到城市改变的时刻。每一个节点，都是一扇通往生活与艺术的门。</p>
   </div>
 
-  <div class="century-rail-wrap" tabindex="0" aria-label="可横向滚动的世纪时间轴">
+  <div class="century-rail-wrap" tabindex="0" aria-label="横向浏览六个世纪的时间轴">
     <ol class="century-rail">
       {centuries.map((century) => (
         <li class:list={['century-step', { 'century-step--featured': century.id === '19' }]}>
@@ -66,7 +66,7 @@ const centuries = [
             <span class="century-node-century">{century.label}</span>
             <strong>{century.title}</strong>
             <span class="century-node-detail">{century.detail}</span>
-            {century.id === '19' && <span class="century-node-hint">本期展览 · 点击进入</span>}
+            {century.id === '19' && <span class="century-node-hint">本期展览 · 点亮巴黎</span>}
           </button>
         </li>
       ))}
@@ -74,11 +74,11 @@ const centuries = [
   </div>
 
   <div class="century-gateway-footer">
-    <p data-century-status aria-live="polite">19世纪巴黎展览已准备好。</p>
-    <button class="century-enter" type="button" data-enter-paris>进入19世纪巴黎 <span aria-hidden="true">↘</span></button>
+    <p data-century-status aria-live="polite">19世纪的巴黎展厅已经亮起。</p>
+    <button class="century-enter" type="button" data-enter-paris>进入巴黎 · 19世纪 <span aria-hidden="true">↘</span></button>
   </div>
 
-  <p class="century-scroll-hint">横向拖动或使用方向键探索世纪</p>
+  <p class="century-scroll-hint">沿时间轴漫游 · 横向探索六个世纪</p>
 </section>
 
 <script src="../scripts/century-timeline.mjs"></script>
