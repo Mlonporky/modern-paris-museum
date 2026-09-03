@@ -281,3 +281,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: Working tree was clean before this handoff; the local preview remains available at `http://localhost:4321/`; the timeline refactor and tests are committed in `c658641` and the handoff record in `2fa09df`.
 - Commit: `12a1dc3 docs: close timeline update session`
 - Next step: If continuing, add more representative artworks to the existing periods without reopening the completed timeline structure.
+
+## 2026-09-02 21:17 - Century gateway homepage
+
+- Status: completed
+- Changed: Added a black full-screen homepage gateway with a luminous 16th-21st century axis; highlighted the 19th century and connected its click action to the existing modern Paris exhibition; added a return link, responsive horizontal mobile rail, accessible status messaging, and a generated-markup test.
+- Verified: `npm run verify` passed with 0 Astro errors, 0 warnings, 0 hints, 14 tests, and four valid JPEGs; browser checks confirmed 19th-century entry, return-to-axis navigation, 390px document-width safety, and no browser errors or warnings.
+- Commit: `c0ee34a feat: add century gateway homepage`
+- Next step: Review the visual intensity of the glow and decide whether the 20th-21st century nodes should later receive their own exhibition content.

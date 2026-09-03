@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import ArtworkViewer from '../components/ArtworkViewer.astro';
+import CenturyTimeline from '../components/CenturyTimeline.astro';
 import Header from '../components/Header.astro';
 import MarketEssay from '../components/MarketEssay.astro';
 import Quiz from '../components/Quiz.astro';
@@ -34,17 +35,21 @@ const base = import.meta.env.BASE_URL;
   title="光线照进现代巴黎｜印象派与现代城市生活"
   description="从四幅作品理解19世纪巴黎的城市改造、工业化、消费文化与艺术市场。"
 >
-  <Header heroImage={`${base}${hero.image}`} heroAlt={hero.imageAlt} />
   <main class="exhibition-main" id="main-content">
-    <section class="section-intro exhibition-intro" aria-labelledby="exhibition-title">
+    <CenturyTimeline />
+    <div class="paris-exhibition" id="paris-exhibition" data-paris-exhibition tabindex="-1">
+      <a class="century-return" href="#century-gateway">↖ 回到世纪轴</a>
+      <Header heroImage={`${base}${hero.image}`} heroAlt={hero.imageAlt} />
+      <section class="section-intro exhibition-intro" aria-labelledby="exhibition-title">
       <p class="eyebrow intro-label">策展引言</p>
       <h2 id="exhibition-title">为什么是此时，为什么是巴黎？</h2>
       <p>印象派并非只是一种画法。它也是快速变化的城市、交通、消费和观看习惯留下的视觉记录。</p>
     </section>
-    <Timeline events={timelineEvents} base={base} />
-    <ArtworkViewer artworks={artworks} base={base} />
-    <MarketEssay variant="market" />
-    <Quiz />
-    <Sources artworks={entries} />
+      <Timeline events={timelineEvents} base={base} />
+      <ArtworkViewer artworks={artworks} base={base} />
+      <MarketEssay variant="market" />
+      <Quiz />
+      <Sources artworks={entries} />
+    </div>
   </main>
 </BaseLayout>

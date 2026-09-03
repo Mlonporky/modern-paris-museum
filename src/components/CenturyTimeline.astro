@@ -1,0 +1,84 @@
+---
+const centuries = [
+  {
+    id: '16',
+    label: '16世纪',
+    title: '观看开始改变',
+    detail: '远方、地图与新视野',
+  },
+  {
+    id: '17',
+    label: '17世纪',
+    title: '光进入室内',
+    detail: '私人生活成为题材',
+  },
+  {
+    id: '18',
+    label: '18世纪',
+    title: '城市正在聚集',
+    detail: '公共生活与消费萌芽',
+  },
+  {
+    id: '19',
+    label: '19世纪',
+    title: '现代巴黎',
+    detail: '街道、铁路与新观看',
+  },
+  {
+    id: '20',
+    label: '20世纪',
+    title: '速度成为风景',
+    detail: '机器、影像与大众社会',
+  },
+  {
+    id: '21',
+    label: '21世纪',
+    title: '屏幕继续发光',
+    detail: '我们正在经历的现在',
+  },
+];
+---
+
+<section class="century-gateway" id="century-gateway" data-century-gateway aria-labelledby="century-title">
+  <div class="century-gateway-top">
+    <p class="eyebrow">时间入口 · 从世纪开始观看</p>
+    <p class="century-index" aria-hidden="true">01 — 06</p>
+  </div>
+
+  <div class="century-gateway-copy">
+    <p class="century-overline">一条穿过时间的光</p>
+    <h1 id="century-title">从哪个世纪<br /><em>开始观看？</em></h1>
+    <p>沿着光影的轴线移动。选择一个世纪，进入属于它的城市、生活与艺术。</p>
+  </div>
+
+  <div class="century-rail-wrap" tabindex="0" aria-label="可横向滚动的世纪时间轴">
+    <ol class="century-rail">
+      {centuries.map((century) => (
+        <li class:list={['century-step', { 'century-step--featured': century.id === '19' }]}>
+          <button
+            class="century-node"
+            type="button"
+            data-century={century.id}
+            aria-controls="paris-exhibition"
+            aria-pressed={century.id === '19' ? 'true' : 'false'}
+          >
+            <span class="century-node-light" aria-hidden="true"></span>
+            <span class="century-node-century">{century.label}</span>
+            <strong>{century.title}</strong>
+            <span class="century-node-detail">{century.detail}</span>
+            {century.id === '19' && <span class="century-node-hint">本期展览 · 点击进入</span>}
+          </button>
+        </li>
+      ))}
+    </ol>
+  </div>
+
+  <div class="century-gateway-footer">
+    <p data-century-status aria-live="polite">19世纪巴黎展览已准备好。</p>
+    <button class="century-enter" type="button" data-enter-paris>进入19世纪巴黎 <span aria-hidden="true">↘</span></button>
+  </div>
+
+  <p class="century-scroll-hint">横向拖动或使用方向键探索世纪</p>
+</section>
+
+<script src="../scripts/century-timeline.mjs"></script>
