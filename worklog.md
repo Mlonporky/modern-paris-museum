@@ -303,5 +303,5 @@ Append-only project history for session handoff. New sessions should read only t
 - Status: completed
 - Changed: Replaced functional placeholder-style gateway labels with restrained curatorial copy about light, cities, daily life, and changing ways of seeing; refined all six century titles and subtitles, the 19th-century CTA, status messages, accessibility label, and mobile exploration hint.
 - Verified: `npm run verify` passed with 0 Astro errors, 0 warnings, 0 hints, 14 tests, and four valid JPEGs; browser confirmed the new headline, 19th-century selection, Paris copy, and no browser errors or warnings.
-- Commit: pending
+- Commit: `2cbe84f content: refine century gateway copy`
 - Next step: Review individual century copy or continue with a longer transition into the 19th-century exhibition.
