@@ -305,3 +305,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: `npm run verify` passed with 0 Astro errors, 0 warnings, 0 hints, 14 tests, and four valid JPEGs; browser confirmed the new headline, 19th-century selection, Paris copy, and no browser errors or warnings.
 - Commit: `2cbe84f content: refine century gateway copy`
 - Next step: Review individual century copy or continue with a longer transition into the 19th-century exhibition.
+
+## 2026-09-02 22:00 - Push and session closeout
+
+- Status: completed
+- Changed: Pushed the completed century gateway homepage, cinematic lighting, and refined gateway copy to GitHub `origin/main`; recorded the final preview and verification state for the next session.
+- Verified: `git push origin main` advanced `ceefd26` to `82a50e7`; the local preview remains available at `http://localhost:4321/`; the latest `npm run verify` passed with 0 Astro errors, 0 warnings, 0 hints, 14 tests, and four valid JPEGs; browser checks found no errors or warnings.
+- Commit: `82a50e7` and its preceding completed feature commits are pushed to `origin/main`.
+- Next step: No required project work remains; wait for the next visual or content direction, with optional future work on 20th- and 21st-century exhibition content.

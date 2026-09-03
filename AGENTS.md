@@ -40,3 +40,11 @@
 - Work in small educational increments: explain the concept, make a small change, show the diff, verify it, then continue.
 - The user has no programming background. Explain HTML, CSS, JavaScript, Astro, Git, and GitHub in plain Chinese without assuming prior knowledge.
 
+## Current project status
+
+- Updated: 2026-09-02
+- Status: completed for the current milestone. The homepage opens on a black six-century gateway; the 19th-century node enters the existing modern Paris exhibition; the gateway has cinematic moving light, breathing halos, flowing axis light, refined curatorial copy, responsive horizontal exploration, and reduced-motion support.
+- Preview: `http://localhost:4321/`
+- Verified: `npm run verify` passed with 0 Astro errors, 0 warnings, 0 hints, 14 tests, and four valid JPEGs; browser checks confirmed 19th-century entry, return navigation, 390px document-width safety, and no browser errors or warnings.
+- Git: feature history through `82a50e7` was pushed to `origin/main`; this file records the current status for future sessions.
+- Next step: No required work remains for this milestone. If continuing, review the gateway transition or add real content for the 20th and 21st centuries.
