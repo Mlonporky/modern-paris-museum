@@ -289,3 +289,11 @@ Append-only project history for session handoff. New sessions should read only t
 - Verified: `npm run verify` passed with 0 Astro errors, 0 warnings, 0 hints, 14 tests, and four valid JPEGs; browser checks confirmed 19th-century entry, return-to-axis navigation, 390px document-width safety, and no browser errors or warnings.
 - Commit: `336445a feat: add century gateway homepage`
 - Next step: Review the visual intensity of the glow and decide whether the 20th-21st century nodes should later receive their own exhibition content.
+
+## 2026-09-02 21:25 - Cinematic century lighting
+
+- Status: completed
+- Changed: Added a slow diagonal background light band, a breathing title halo, a moving beam between century nodes, and staggered node glow pulses; added reduced-motion overrides so the gateway remains static when requested.
+- Verified: `npm run verify` passed with 0 Astro errors, 0 warnings, 0 hints, 14 tests, and four valid JPEGs; browser computed styles confirmed all five cinematic animations, 390px document-width safety, and no browser errors or warnings.
+- Commit: pending
+- Next step: Review whether the gateway should transition with a longer fade when entering the 19th-century exhibition.

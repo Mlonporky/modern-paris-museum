@@ -503,6 +503,24 @@ figcaption { margin-top: 10px; color: var(--muted); font-size: 0.82rem; }
   z-index: -1;
   opacity: 0.42;
   background: repeating-linear-gradient(115deg, transparent 0 120px, rgba(255, 255, 255, 0.025) 121px, transparent 122px 240px);
+  background-size: 220% 220%;
+  animation: century-grid-drift 28s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+.century-gateway::after {
+  content: '';
+  position: absolute;
+  top: -30%;
+  bottom: -30%;
+  left: -32%;
+  z-index: -1;
+  width: 38%;
+  background: linear-gradient(105deg, transparent 0%, rgba(159, 183, 199, 0.02) 38%, rgba(242, 234, 219, 0.16) 50%, rgba(176, 139, 82, 0.05) 62%, transparent 100%);
+  filter: blur(18px);
+  mix-blend-mode: screen;
+  opacity: 0;
+  transform: rotate(16deg);
+  animation: century-light-drift 19s ease-in-out infinite;
   pointer-events: none;
 }
 .century-gateway-top,
@@ -530,7 +548,21 @@ figcaption { margin-top: 10px; color: var(--muted); font-size: 0.82rem; }
   width: min(780px, 100%);
   align-self: center;
   justify-self: center;
+  isolation: isolate;
   text-align: center;
+}
+.century-gateway-copy::before {
+  content: '';
+  position: absolute;
+  inset: -9rem -15rem;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(176, 139, 82, 0.15), rgba(176, 139, 82, 0.04) 38%, transparent 70%);
+  filter: blur(12px);
+  opacity: 0.65;
+  transform: scale(0.9);
+  animation: century-breathe 8s ease-in-out infinite;
+  pointer-events: none;
 }
 .century-overline {
   margin: 0 0 12px;
@@ -585,6 +617,20 @@ figcaption { margin-top: 10px; color: var(--muted); font-size: 0.82rem; }
   background: linear-gradient(90deg, transparent, rgba(242, 234, 219, 0.46) 8%, rgba(176, 139, 82, 0.92) 50%, rgba(242, 234, 219, 0.46) 92%, transparent);
   box-shadow: 0 0 16px rgba(176, 139, 82, 0.55);
 }
+.century-rail::after {
+  content: '';
+  position: absolute;
+  top: 58px;
+  left: 7%;
+  width: 16%;
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(242, 234, 219, 0.92) 48%, transparent);
+  filter: blur(3px);
+  opacity: 0;
+  animation: century-rail-flow 11s ease-in-out infinite;
+  pointer-events: none;
+}
 .century-step { min-width: 0; }
 .century-node {
   position: relative;
@@ -624,6 +670,15 @@ figcaption { margin-top: 10px; color: var(--muted); font-size: 0.82rem; }
   opacity: 0.35;
   transform: translateX(-50%);
   transition: opacity 220ms ease, transform 220ms ease;
+  animation: century-node-breathe 7s ease-in-out infinite;
+}
+.century-step:nth-child(2) .century-node-light { animation-delay: -1.4s; }
+.century-step:nth-child(3) .century-node-light { animation-delay: -2.8s; }
+.century-step:nth-child(5) .century-node-light { animation-delay: -4.2s; }
+.century-step:nth-child(6) .century-node-light { animation-delay: -5.6s; }
+.century-step--featured .century-node-light {
+  animation-name: century-featured-breathe;
+  animation-duration: 5s;
 }
 .century-node-century,
 .century-node-detail,
@@ -738,4 +793,40 @@ figcaption { margin-top: 10px; color: var(--muted); font-size: 0.82rem; }
   .century-gateway h1 { font-size: clamp(3.3rem, 16vw, 5.2rem); }
   .century-gateway-copy > p:last-child { margin-top: 16px; font-size: 0.98rem; }
   .century-node { min-height: 174px; padding-right: 10px; padding-left: 10px; }
+}
+
+@keyframes century-grid-drift {
+  from { background-position: 0 0; opacity: 0.28; }
+  to { background-position: 120px 70px; opacity: 0.48; }
+}
+@keyframes century-light-drift {
+  0%, 12% { opacity: 0; transform: translate3d(-30%, 0, 0) rotate(16deg); }
+  34% { opacity: 0.72; }
+  76% { opacity: 0.38; }
+  100% { opacity: 0; transform: translate3d(290%, 0, 0) rotate(16deg); }
+}
+@keyframes century-breathe {
+  0%, 100% { opacity: 0.42; transform: scale(0.9); }
+  50% { opacity: 0.82; transform: scale(1.08); }
+}
+@keyframes century-rail-flow {
+  0%, 10% { left: 7%; opacity: 0; }
+  22% { opacity: 0.92; }
+  78% { left: 77%; opacity: 0.72; }
+  92%, 100% { left: 87%; opacity: 0; }
+}
+@keyframes century-node-breathe {
+  0%, 100% { opacity: 0.25; filter: blur(3px); }
+  50% { opacity: 0.58; filter: blur(7px); }
+}
+@keyframes century-featured-breathe {
+  0%, 100% { opacity: 0.66; filter: blur(3px); }
+  50% { opacity: 1; filter: blur(9px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .century-gateway::before,
+  .century-gateway::after,
+  .century-gateway-copy::before,
+  .century-rail::after,
+  .century-node-light { animation: none; }
 }
